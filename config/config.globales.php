@@ -6,8 +6,13 @@ date_default_timezone_set('Atlantic/Canary');
 const CONFIG_GENERAL = array(
     'TITULO_WEB' => 'DAMDentista 1.0',
     'DESCRIPCION_WEB' => 'Ejemplo de login para una consulta odontológica',
+<<<<<<< HEAD
     'RUTA_URL_BASE' => 'http://localhost/proyectodam',
     'RUTA_URL_BASE_LIB' => 'http://localhost/proyectodam/lib',
+=======
+    'RUTA_URL_BASE' => 'http://localhost/proyectopruebadam',
+    'RUTA_URL_BASE_LIB' => 'http://localhost/proyectopruebadam/lib',
+>>>>>>> 31a56cd9ae0df4b8607a3bf7015a36d2e483a0c6
     'RUTA_SERVER_BASE' => __DIR__.'/..',
     'RUTA_SERVER_BASE_LIB' => __DIR__.'/../lib',
 
