@@ -17,7 +17,7 @@ require_once(__DIR__.'/config/config.globales.php');
     <!-- Configuración Global JS -->
     <script src="./config/config.globales.js"></script>
 
-    <!-- Login JS -->
+    <!-- Usuario JS -->
     <script src="./js/funciones.usuario.js"></script>
 </head>
 
@@ -35,7 +35,7 @@ require_once(__DIR__.'/config/config.globales.php');
                     <input type="text" class="form-control" name="passwordActual" id="form-cambiarPassword-passwordActual" placeholder="Introduzca su contraseña actual">
                 </div>
                 <div class="mb-3">
-                    <label for="form-cambiarPassword-passwordNueva" class="form-label text-white">Password nueva</label>
+                    <label for="form-cambiarPassword-passwordNueva" class="form-label text-white">Password nueva <small>(debe contener mayúscula, minúscula, número y símbolo)</small></label>
                     <input type="password" class="form-control" name="passwordNueva" id="form-cambiarPassword-passwordNueva" placeholder="Introduzca la nueva contraseña">
                 </div>
                 <div class="mb-3">

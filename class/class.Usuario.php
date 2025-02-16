@@ -84,7 +84,10 @@ class Usuario extends ObjetoDB {
         $this->ipUltimoAcceso = $ipUltimoAcceso;
     }
 
-    public function getFechaHoraUltimoAcceso(): string {
+    public function getFechaHoraUltimoAcceso(bool $formateada = false): string {
+        if($formateada) {
+            return date("d/m/Y H:i", strtotime($this->fechaHoraUltimoAcceso));
+        }
         return $this->fechaHoraUltimoAcceso;
     }
 
@@ -110,6 +113,7 @@ class Usuario extends ObjetoDB {
 
     public function guardar(): bool {
         if ($this->email == "" || $this->nombre == "" || $this->apellidos == "" || $this->password == "" || $this->rol == "") {
+            echo "hola";
             return false;
         }
 
