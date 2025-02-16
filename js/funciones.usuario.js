@@ -21,9 +21,31 @@ function enviarFormularioCambiarPassword(event) {
           $("#form-cambiarPassword-repetirPasswordNueva").addClass("is-invalid");
           $("#form-cambiarPassword-feedback").addClass("text-bg-danger");
         }
+        if (respuesta.exitoPassword === 0) {
+          $("#form-cambiarPassword-passwordActual").addClass("is-invalid");
+          $("#form-cambiarPassword-feedback").addClass("text-bg-danger");
+        }
+
+        if (respuesta.exitoPasswordNueva === 0) {
+          $("#form-cambiarPassword-passwordNueva").addClass("is-invalid");
+          $("#form-cambiarPassword-repetirPasswordNueva").addClass("is-invalid");
+          $("#form-cambiarPassword-feedback").addClass("text-bg-danger");
+        }
   
         if (respuesta.exito === 1) {
           $("#form-cambiarPassword-passwordActual").addClass("is-valid");
+          $("#form-cambiarPassword-passwordNueva").addClass("is-valid");
+          $("#form-cambiarPassword-repetirPasswordNueva").addClass("is-valid");
+          $("#form-cambiarPassword-feedback").addClass("text-bg-success")
+        }
+
+        if (respuesta.exitoPassword === 1) {
+          $("#form-cambiarPassword-passwordActual").addClass("is-valid");
+          $("#form-cambiarPassword-feedback").addClass("text-bg-success")
+        }
+
+      
+        if (respuesta.exitoPasswordNueva === 1) {
           $("#form-cambiarPassword-passwordNueva").addClass("is-valid");
           $("#form-cambiarPassword-repetirPasswordNueva").addClass("is-valid");
           $("#form-cambiarPassword-feedback").addClass("text-bg-success")

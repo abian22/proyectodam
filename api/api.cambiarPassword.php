@@ -6,9 +6,13 @@ require_once __DIR__ . '/../class/function.globales.php';
 require_once __DIR__ . '/../class/class.Usuario.php';
 require_once __DIR__ . "/../class/class.SecureSessionHandler.php";
 
-$sesionActual = new SecureSessionHandler();
-$sesionActual->start();
-$usuarioActual = new Usuario($sesionActual->read("id"));
+
+// $sesionActual = new SecureSessionHandler();
+// $sesionActual->start();
+// $usuarioActual = new Usuario($sesionActual->read("id"));
+
+/* @var Usuario $usuarioActual */
+global $usuarioActual;
 
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -19,7 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $tarea = $_POST['tarea'] ?? null;
 if (is_null($tarea)) {
     header('Content-Type: application/json');
-    echo json_encode(['exito' => 0, 'mensaje' => 'No se ha recibido ninguna tarea']);
+    echo json_encode([
+        'exito' => 0,
+        'exitoPassword' => 1,
+        'exitoPasswordNueva' => 1,
+        'mensaje' => 'No se ha recibido ninguna tarea'
+    ]);
     exit;
 }
 
@@ -38,35 +47,62 @@ switch ($tarea) {
         }
 
         if (!$usuarioActual->checkPassword($passwordActual)) {
-            $respuesta['exito'] = 0;
+            $usuarioActual->setIntentosFallidos($usuarioActual->getIntentosFallidos() + 0);
+            $usuarioActual->guardar();
+            $respuesta['exitoPassword'] = 0;
             $respuesta['mensaje'] = 'La password actual es incorrecta';
             break;
-        }
+        } else $respuesta['exitoPassword'] = 1;
+
 
         if ($passwordNueva === $passwordActual) {
-            $respuesta['exito'] = 0;
+            $respuesta['exitoPasswordNueva'] = 0;
             $respuesta['mensaje'] = 'La password nueva no puede ser igual que la actual';
             break;
-        }
+        } else 
 
         if ($passwordNueva !== $repetirPasswordNueva) {
-            $respuesta['exito'] = 0;
+            $respuesta['exitoPasswordNueva'] = 0;
             $respuesta['mensaje'] = 'La password nueva no coincide';
             break;
         }
 
-        if (
-            !checkPasswordTieneMinuscula($passwordNueva) || !checkPasswordTieneMayuscula($passwordNueva) || !checkPasswordTieneNumero($passwordNueva)
-            || !checkPasswordTieneSimbolo($passwordNueva)
-        ) {
-            $respuesta['exito'] = 0;
-            $respuesta['mensaje'] = 'La password debe contener al menos una minúscula, una mayúscula, un número y un símbolo';
+        if (!checkPasswordTieneMinuscula($passwordNueva)) {
+            $respuesta['exitoPasswordNueva'] = 0;
+            $respuesta['mensaje'] = 'La password debe contener al menos una minúscula';
+            break;
+        }
+
+        if (!checkPasswordTieneMayuscula($passwordNueva)) {
+            $respuesta['exitoPasswordNueva'] = 0;
+            $respuesta['mensaje'] = 'La password debe contener al menos una mayúscula';
+            break;
+        }
+
+        if (!checkPasswordTieneNumero($passwordNueva)) {
+            $respuesta['exitoPasswordNueva'] = 0;
+            $respuesta['mensaje'] = 'La password debe contener al menos un número';
+            break;
+        }
+
+        if (!checkPasswordTieneSimbolo($passwordNueva)) {
+            $respuesta['exitoPasswordNueva'] = 0;
+            $respuesta['mensaje'] = 'La password debe contener al menos un símbolo';
+            break;
+        }
+
+        if (strlen($passwordNueva) < PASSWORD_LONGITUD_MINIMA) {
+            $respuesta['exitoPasswordNueva'] = 0;
+            $respuesta['mensaje'] = 'La password debe contener al menos 8 carácteres';
             break;
         }
 
         $usuarioActual->setPassword($passwordNueva);
         $respuesta['exito'] = 1;
+        $respuesta['exitoPassword'] = 1;
+        $respuesta['exitoPasswordNueva'] = 1;
         $respuesta['mensaje'] = 'La password nueva se ha guardado correctamente ';
+        echo $passwordNueva;
         $usuarioActual->guardar();
         break;
 

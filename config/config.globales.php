@@ -6,8 +6,8 @@ date_default_timezone_set('Atlantic/Canary');
 const CONFIG_GENERAL = array(
     'TITULO_WEB' => 'DAMDentista 1.0',
     'DESCRIPCION_WEB' => 'Ejemplo de login para una consulta odontológica',
-    'RUTA_URL_BASE' => 'http://localhost/ejemplologin',
-    'RUTA_URL_BASE_LIB' => 'http://localhost/ejemplologin/lib',
+    'RUTA_URL_BASE' => 'http://localhost/proyectopruebadam',
+    'RUTA_URL_BASE_LIB' => 'http://localhost/proyectopruebadam/lib',
     'RUTA_SERVER_BASE' => __DIR__.'/..',
     'RUTA_SERVER_BASE_LIB' => __DIR__.'/../lib',
 
@@ -21,6 +21,8 @@ const CONFIG_SESIONES = array(
     'NOMBRE_SESION_LOGIN' => 'CIP_FP_DAM_LOGIN',
     'DOMINIO_SESION_LOGIN' => 'localhost'
 );
+
+const PASSWORD_LONGITUD_MINIMA = 8;
 
 // PARÁMETROS BASE DE DATOS
 const CONFIG_DB = array(
