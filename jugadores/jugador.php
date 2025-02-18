@@ -24,7 +24,7 @@ $usuario = new Usuario($id);
     <script src="../config/config.globales.js"></script>
 
     <!-- JS para la gestión de dentistas -->
-    <script src="./js/funciones.dentista.js"></script>
+    <script src="./js/funciones.jugador.js"></script>
 </head>
 
 <body>
@@ -67,6 +67,32 @@ $usuario = new Usuario($id);
                     </tbody>
                 </table>
             </div>
+            <div class="row mt-3">
+            <div class="col-12">
+                <h3>Datos de Juego</h3>
+                <table id="tablaDatosJuego" class="table">
+                    <thead>
+                        <tr>
+                            <th>Juego</th>
+                            <th>Ranking</th>
+                            <th>Especialidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <?php echo $usuario->getJuego(); ?>
+                            </td>
+                            <td>
+                                <?php echo $usuario->getRanking(); ?>
+                            </td>
+                            <td>
+                                <?php echo $usuario->getEspecialidad(); ?>
+                            </td>
+                     
+                        </tr>
+                    </tbody>
+                </table>
 
             <div class="row mt-3">
             <div class="col-12">

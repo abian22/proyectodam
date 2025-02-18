@@ -29,7 +29,7 @@ if (is_null($tarea)) {
 
 $respuesta = array();
 switch ($tarea) {
-    case "CARGAR_DENTISTA":
+    case "CARGAR_JUGADOR":
         $id = intval($_POST["id"]);
         $usuario = new Usuario($id);
         if ($usuario->getId() < 0) {
@@ -41,31 +41,44 @@ switch ($tarea) {
         $datos["nombre"] = $usuario->getNombre();
         $datos["apellidos"] = $usuario->getApellidos();
         $datos["email"] = $usuario->getEmail();
+        $datos["juego"] = $usuario->getJuego();
+        $datos["ranking"] = $usuario->getRanking();
         $datos["bloqueado"] = $usuario->getBloqueado();
         $respuesta["exito"] = 1;
         $respuesta["datos"] = $datos;
         break;
-    case 'GUARDAR_DENTISTA':
+    case 'GUARDAR_JUGADOR':
 
         $id = intval($_POST['id']);
         $usuario = new Usuario($id);
-        $usuario->setNombre(sanitizarString($_POST["nombre"]));
 
-        $usuario->setApellidos(sanitizarString($_POST["apellidos"]));
 
+        
+        if(strlen($nombre) == 0 ||strlen($apellidos) == 0) {
+            $respuesta ["exito"] = 0;
+            $respuesta ["errorNombreApellidos"] = 1;
+            $respuesta ["mensaje"] = "debe rellentar el nombre y los apellidos";
+            break;
+        }
+
+        $usuario->setNombre(sanitizarString(trim($_POST["nombre"])));
+        $usuario->setApellidos(sanitizarString(trim($_POST["apellidos"])));
+ 
         if (!validarEmail(sanitizarString($_POST["email"]))) {
             $respuesta["exito"] = 0;
+            $respuesta["errorEmail"] = 1;
             $respuesta["mensaje"] = "el email no es válido";
             break;
         }
 
-        $usuario->setBloqueado(!($_POST["bloqueado"] === "false"));
-
         $usuario->setEmail(sanitizarString($_POST["email"]));
-        $usuario->setRol("DENTISTA");
+        $usuario->setBloqueado(!($_POST["bloqueado"] === "false"));
+        $usuario->setRol("JUGADOR");
+        $usuario->setJuego(sanitizarString($_POST["juego"]));
+        $usuario->setRanking(sanitizarString($_POST["ranking"]));
+        $usuario->setEspecialidad(sanitizarString($_POST["especialidad"]));
         $password1 = sanitizarString($_POST["password1"]);
         $password2 = sanitizarString($_POST["password2"]);
-
 
         if ($id > 0) {
             if (strlen($password1) > 0) {
@@ -73,7 +86,12 @@ switch ($tarea) {
                     $usuario->setPassword($password1);
                 } else {
                     $respuesta["exito"] = 0;
-                    $respuesta["mensaje"] = "Revise los campos de contraseñas";
+                    $respuesta["errorPassword"] = 1;
+                    if ($password1 != $password2) {
+                        $respuesta["mensaje"] = "Las contraseñas no coinciden";
+                    } else {
+                        $respuesta["mensaje"] = "La contraseña no cumple con los criterios mínimos";
+                    }
                     break;
                 }
             }
@@ -82,7 +100,12 @@ switch ($tarea) {
                 $usuario->setPassword($password1);
             } else {
                 $respuesta["exito"] = 0;
-                $respuesta["mensaje"] = "Revise los campos de contraseñas";
+                $respuesta["errorPassword"] = 1;
+                if ($password1 != $password2) {
+                    $respuesta["mensaje"] = "Las contraseñas no coinciden";
+                } else {
+                    $respuesta["mensaje"] = "La contraseña no cumple con los criterios mínimos";
+                }
                 break;
             }
         }
@@ -103,6 +126,6 @@ switch ($tarea) {
         break;
 }
 
-
+ob_clean();
 header('Content-Type: application/json');
 echo json_encode($respuesta);

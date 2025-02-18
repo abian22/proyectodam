@@ -2,7 +2,7 @@
 require_once __DIR__.'/../config/config.globales.php';
 require_once __DIR__.'/../api/comprobar.sesion.php';
 
-require_once __DIR__.'/GetJSONTablaDentistas_Funciones.php';
+require_once __DIR__.'/GetJSONTablaJugadores_Funciones.php';
 
 $textoBusqueda = "";
 $limit = 0;
@@ -32,4 +32,4 @@ if (isset($_GET['order'])) {
 
 ob_clean();
 header('Content-Type: application/json');
-echo json_encode(listadoTablaDentistas($textoBusqueda, $limit, $offset, $sortby, $order));
+echo json_encode(listadoTablaJugadores($textoBusqueda, $limit, $offset, $sortby, $order));

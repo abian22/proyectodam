@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/api/comprobar.sesion.php";
 
+global $usuarioActual;
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ require_once __DIR__ . "/api/comprobar.sesion.php";
 
     <?php include(__DIR__ ."/menu/menu.php") ?>
 
-    <h2 class="text-white">Esto es el home</h2>
+    <h2 class="text-white">Bienvenido <?php echo $usuarioActual->getNombre();?></h2>
 
     <?php include(__DIR__ . '/header/footer.php'); ?>
 </body>

@@ -11,6 +11,9 @@ class Usuario extends ObjetoDB {
     protected string $email = "";
     protected string $password = "";
     protected string $rol = "";
+    protected string $juego = "";
+    protected string $ranking = "";
+    protected string $especialidad = "";
     protected string $ipUltimoAcceso = "";
     protected string $fechaHoraUltimoAcceso = "";
     protected int $intentosFallidos = 0;
@@ -74,6 +77,29 @@ class Usuario extends ObjetoDB {
             return true;
         }
         return false;
+    }
+
+    public function getJuego(): string {
+        return sanitizarString($this->juego);
+    }
+
+    public function setJuego(string $juego): void {
+        $this->juego = sanitizarString($juego);
+    }
+
+    public function getRanking(): string {
+        return sanitizarString($this->ranking);
+    }
+    public function setRanking(string $ranking): void {
+        $this->ranking = sanitizarString($ranking);
+    }
+
+    public function getEspecialidad(): string {
+        return sanitizarString($this->especialidad);
+    }
+    
+    public function setEspecialidad(string $especialidad): void {
+        $this->especialidad = sanitizarString($especialidad);
     }
 
     public function getIpUltimoAcceso(): string {

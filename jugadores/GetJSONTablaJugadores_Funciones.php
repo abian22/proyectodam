@@ -8,7 +8,7 @@ require_once __DIR__.'/../class/class.Usuario.php';
 /***********************************************************************************
  * Genera la consulta a la DB para obtener el listado de dentistas para la tabla
  ***********************************************************************************/
-function generarConsultaListadoTablaDentistas(string $textoBusqueda = "", int $limit = 0, int $offset = 0, string | int $sortby = 0, string | int $order = ""): array | bool {
+function generarConsultaListadoTablaJugadores(string $textoBusqueda = "", int $limit = 0, int $offset = 0, string | int $sortby = 0, string | int $order = ""): array | bool {
     $parametrosWhere = array();
 
     $consultaSql = '
@@ -20,7 +20,7 @@ function generarConsultaListadoTablaDentistas(string $textoBusqueda = "", int $l
             d.rol = :rol                
     ';
 
-    $parametrosWhere[':rol'] = "DENTISTA";
+    $parametrosWhere[':rol'] = "JUGADOR";
 
     if ($textoBusqueda != "") {
         $consultaSql .= ' AND (
@@ -96,8 +96,8 @@ function generarConsultaListadoTablaDentistas(string $textoBusqueda = "", int $l
 /***********************************************************************************
  * Devuelve el JSON con el listado de dentistas
  ***********************************************************************************/
-function listadoTablaDentistas(string $textoBusqueda = "", int $limit = 0, int $offset = 0, string | int $sortby = 0, string | int $order = ""): array | bool {
-    $resultadosConsulta = generarConsultaListadoTablaDentistas($textoBusqueda, $limit, $offset, $sortby, $order);
+function listadoTablaJugadores(string $textoBusqueda = "", int $limit = 0, int $offset = 0, string | int $sortby = 0, string | int $order = ""): array | bool {
+    $resultadosConsulta = generarConsultaListadoTablaJugadores($textoBusqueda, $limit, $offset, $sortby, $order);
 
     if ($resultadosConsulta !== false) {
         $jsonDatos = array();
@@ -108,8 +108,11 @@ function listadoTablaDentistas(string $textoBusqueda = "", int $limit = 0, int $
             $jsonDatos[$i]['apellidos'] = $fila['apellidos'];
             $jsonDatos[$i]['email'] = $fila['email'];
             $jsonDatos[$i]['rol'] = $fila['rol'];
-            $jsonDatos[$i]['acciones'] = '<button class="btn btn-warning" onclick="abrirModalDentista(this,'.$fila['id'].')">Editar</button>';
-            $jsonDatos[$i]['acciones'] .= '<a class="btn btn-success ms-2"href="dentista.php?id='.$fila["id"].'">Ver</a>';
+            $jsonDatos[$i]['juego'] = $fila['juego'];
+            $jsonDatos[$i]['ranking'] = $fila['ranking'];
+            $jsonDatos[$i]['especialidad'] = $fila['especialidad'];
+            $jsonDatos[$i]['acciones'] = '<button class="btn btn-warning" onclick="abrirModalJugador(this,'.$fila['id'].')">Editar</button>';
+            $jsonDatos[$i]['acciones'] .= '<a class="btn btn-success ms-2"href="jugador.php?id='.$fila["id"].'">Ver</a>';
 
 
             $i++;

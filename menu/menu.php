@@ -14,10 +14,8 @@
                         Usuarios
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?php echo CONFIG_GENERAL["RUTA_URL_BASE"]?>/dentistas">Dentistas</a></li>
-                        <li><a class="dropdown-item" href="#">Enfermeros</a></li>
-                        <li><a class="dropdown-item" href="#">Auxiliares</a></li>
-                        <li><a class="dropdown-item" href="#">Recepcionistas</a></li>
+                        <li><a class="dropdown-item" href="<?php echo CONFIG_GENERAL["RUTA_URL_BASE"]?>/jugadores">Jugadores</a></li>
+                        <li><a class="dropdown-item" href="#">Entrenadores</a></li>
                     </ul>
                 </li>
 
