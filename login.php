@@ -18,18 +18,17 @@ require_once(__DIR__.'/config/config.globales.php');
     <!-- Login JS -->
     <script src="./js/funciones.login.js"></script>
 </head>
-<body class="overflow-hidden">
-    <?php include(__DIR__ . "/menu/menuPreLogin.php") ?>
-    <div class="container-fluid">
-        
-        <div class="row vh-100">
-            <!-- Zona izquierda: imagen -->
-            <div class="col-lg-6 d-none d-lg-block bg-image" style="background: url('<?php echo CONFIG_GENERAL['RUTA_URL_BASE'] ?>/img/login/background.jpg') no-repeat center center; background-size: cover;"></div>
-            
-            <!-- Zona derecha: formulario de acceso -->
-            <div class="col-lg-6 col-12 bg-primary text-white d-flex justify-content-center align-items-center">
-                <div class="w-100" style="max-width: 400px;">
-                    <h2 class="text-center mb-4">DAMDentista 1.0</h2>
+<body>
+
+<div class="container-fluid">
+    <div class="row vh-100">
+        <!-- Zona izquierda: imagen -->
+        <div class="col-lg-6 d-none d-lg-block bg-image" style="background: url('<?php echo CONFIG_GENERAL['RUTA_URL_BASE'] ?>/img/login/background.jpg') no-repeat center center; background-size: cover;"></div>
+
+        <!-- Zona derecha: formulario de acceso -->
+        <div class="col-lg-6 col-12 bg-primary text-white d-flex justify-content-center align-items-center">
+            <div class="w-100" style="max-width: 400px;">
+                <h2 class="text-center mb-4">DAMDentista 1.0</h2>
                 <form id="form-login">
                     <div class="mb-3">
                         <label for="form-login-usuario" class="form-label">Usuario</label>

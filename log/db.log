@@ -1,21 +1,698 @@
+2025-03-09 13:51:53: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
 
-2025-01-27 16:29:33: SQLSTATE[HY000] [2006] MySQL server has gone away
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
 
+2025-03-09 13:51:59: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
 
-2025-01-27 16:29:33: SQLSTATE[HY000] [2006] MySQL server has gone away
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
 
+2025-03-09 13:52:25: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
 
-2025-01-27 16:29:33: SQLSTATE[HY000] [2006] MySQL server has gone away
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
 
+2025-03-09 13:53:51: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON u...' at line 8
 
-2025-01-27 16:29:33: SQLSTATE[HY000] [2006] MySQL server has gone away
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+ 
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
 
+2025-03-09 13:54:01: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM
+            usuarios ud
+         JOIN especialidad_jugador ej ON ud.id...' at line 8
 
-2025-01-27 16:34:12: SQLSTATE[HY000] [2006] MySQL server has gone away
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+ 
+        FROM
+            usuarios ud
+         JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+         JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
 
+2025-03-09 13:54:02: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM
+            usuarios ud
+         JOIN especialidad_jugador ej ON ud.id...' at line 8
 
-2025-01-27 16:34:12: SQLSTATE[HY000] [2006] MySQL server has gone away
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+ 
+        FROM
+            usuarios ud
+         JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+         JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
 
+2025-03-09 13:54:08: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
 
-2025-01-27 16:34:12: SQLSTATE[HY000] [2006] MySQL server has gone away
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:54:09: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:54:24: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:54:32: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:54:34: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:54:37: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:54:38: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:54:48: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:54:49: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:54:49: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:55:06: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:55:11: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:55:13: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:55:24: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'proyectodam.especialidad_jugador' doesn't exist
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            ej.especialidad,
+            j.juego
+        FROM
+            usuarios ud
+        LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+        LEFT JOIN juegos j ON ej.id_juego = j.id
+        WHERE ud.id IN (1,2,7,8)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:58:59: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.id_juego = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:59:00: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.id_juego = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 13:59:06: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.id_juego = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:04:21: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.id_juego = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:04:27: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidad_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.id_juego = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:05:04: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidades_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.id_juego = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:06:00: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidades_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.id_juego = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:06:02: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidades_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.id_juego = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:08:42: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidades_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.juego_id = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:08:44: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidades_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.juego_id = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:08:48: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidades_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.juego_id = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:08:52: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidades_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.juego_id = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:12:19: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidades_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.juego_id = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:12:52: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidades_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.juego_id = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 14:13:07: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud...' at line 13
+
+    SELECT
+        ud.id,
+        ud.nombre,
+        ud.apellidos,
+        ud.email,
+        ud.rol,
+        ej.especialidad,
+        j.juego
+    FROM
+        usuarios ud
+    LEFT JOIN especialidades_jugador ej ON ud.id = ej.id_jugador
+    LEFT JOIN juegos j ON ej.juego_id = j.id
+    WHERE ud.rol = :rol
+    AND (ud.id IN (1,2,7,8) OR ej.id_jugador IS NULL)
+     ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-09 18:05:25: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'juego' in 'field list'
+2025-03-10 09:46:42: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'e.especialidad
+        FROM usuarios ud
+        LEFT JOIN juegos j ON ud.ju...' at line 8
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            j.nombre AS juego
+            e.especialidad
+        FROM usuarios ud
+        LEFT JOIN juegos j ON ud.juego_id = j.id
+        LEFT JOIN especialidad e ON ud.especialidad_id = e.id
+        WHERE ud.id IN (4,5,6,9)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-10 09:46:59: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'e.especialidad
+        FROM usuarios ud
+        LEFT JOIN juegos j ON ud.ju...' at line 8
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            j.nombre AS juego
+            e.especialidad
+        FROM usuarios ud
+        LEFT JOIN juegos j ON ud.juego_id = j.id
+        RIGHT JOIN especialidad e ON ud.especialidad_id = e.id
+        WHERE ud.id IN (4,5,6,9)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
+
+2025-03-10 09:47:04: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'e.especialidad
+        FROM usuarios ud
+        LEFT JOIN juegos j ON ud.ju...' at line 8
+
+        SELECT
+            ud.id,
+            ud.nombre,
+            ud.apellidos,
+            ud.email,
+            ud.rol,
+            j.nombre AS juego
+            e.especialidad
+        FROM usuarios ud
+        LEFT JOIN juegos j ON ud.juego_id = j.id
+        JOIN especialidad e ON ud.especialidad_id = e.id
+        WHERE ud.id IN (4,5,6,9)
+         ORDER BY ud.apellidos ASC, ud.nombre ASC LIMIT 15 OFFSET 0
 

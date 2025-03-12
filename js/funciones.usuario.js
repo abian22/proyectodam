@@ -1,61 +1,40 @@
-function enviarFormularioCambiarPassword(event) {
-    const form = event.target
+function cambiarPasswordUsuario(event) {
+    const form = event.target;
+
     $(".form-control").removeClass("is-invalid is-valid");
-    $("#form-cambiarPassword-feedback").removeClass("text-bg-danger text-bg-success");
-    $("#form-cambiarPassword-feedback").html("");
-  
+    $("#form-cambio-password-feedback").removeClass("text-bg-danger text-bg-success");
+    $("#form-cambio-password-feedback").html('');
+
     let formData = new FormData(form);
-    formData.append("tarea", "CAMBIAR_PASSWORD");
-  
+    formData.append('tarea', 'CAMBIAR_PASSWORD');
+
     $.ajax({
-      url: RUTA_URL_API + "/api.cambiarPassword.php",
-      method: "POST",
-      data: formData, 
-      contentType: false, 
-      processData: false, 
-  
-      success: function (respuesta) {
-        if (respuesta.exito === 0) {
-          $("#form-cambiarPassword-passwordActual").addClass("is-invalid");
-          $("#form-cambiarPassword-passwordNueva").addClass("is-invalid");
-          $("#form-cambiarPassword-repetirPasswordNueva").addClass("is-invalid");
-          $("#form-cambiarPassword-feedback").addClass("text-bg-danger");
-        }
-        if (respuesta.exitoPassword === 0) {
-          $("#form-cambiarPassword-passwordActual").addClass("is-invalid");
-          $("#form-cambiarPassword-feedback").addClass("text-bg-danger");
-        }
+        url: RUTA_URL_API + '/api.usuario.php',
+        method: 'POST',
+        data: formData, // Enviar el objeto FormData
+        contentType: false, // No establecer el encabezado Content-Type manualmente
+        processData: false, // No procesar los datos (necesario para FormData)
 
-        if (respuesta.exitoPasswordNueva === 0) {
-          $("#form-cambiarPassword-passwordNueva").addClass("is-invalid");
-          $("#form-cambiarPassword-repetirPasswordNueva").addClass("is-invalid");
-          $("#form-cambiarPassword-feedback").addClass("text-bg-danger");
-        }
-  
-        if (respuesta.exito === 1) {
-          $("#form-cambiarPassword-passwordActual").addClass("is-valid");
-          $("#form-cambiarPassword-passwordNueva").addClass("is-valid");
-          $("#form-cambiarPassword-repetirPasswordNueva").addClass("is-valid");
-          $("#form-cambiarPassword-feedback").addClass("text-bg-success")
-        }
+        success: function (respuesta) {
+                    if (respuesta.exito === 0) {
+                        $("#form-cambio-password-password-actual").addClass("is-invalid");
+                        $("#form-cambio-password-password-1").addClass("is-invalid");
+                        $("#form-cambio-password-password-2").addClass("is-invalid");
 
-        if (respuesta.exitoPassword === 1) {
-          $("#form-cambiarPassword-passwordActual").addClass("is-valid");
-          $("#form-cambiarPassword-feedback").addClass("text-bg-success")
-        }
+                        $("#form-cambio-password-feedback").addClass("text-bg-danger");
+                        $("#form-cambio-password-feedback").html(respuesta.mensaje);
+                    }
 
-      
-        if (respuesta.exitoPasswordNueva === 1) {
-          $("#form-cambiarPassword-passwordNueva").addClass("is-valid");
-          $("#form-cambiarPassword-repetirPasswordNueva").addClass("is-valid");
-          $("#form-cambiarPassword-feedback").addClass("text-bg-success")
+                    if (respuesta.exito === 1) {
+                        $("#form-cambio-password-feedback").addClass("text-bg-success");
+                        $("#form-cambio-password-feedback").html(respuesta.mensaje);
+                    }
+                }
+        ,
+
+        error: function (xhr, status, error) {
+            console.error('Error en la solicitud:', error);
+            alert('Ocurrió un error al enviar el formulario');
         }
-        $("#form-cambiarPassword-feedback").html(respuesta.mensaje);
-      },
-      error: function (xhr, status, error) {
-        console.error("Error en la solicitud:", error);
-        alert("Ocurrió un error al cambiar la contraseña");
-      },
     });
-  }
-  
+}

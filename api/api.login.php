@@ -5,6 +5,9 @@ require_once __DIR__ . '/../db/class.HandlerDB.php';
 require_once __DIR__ . '/../class/function.globales.php';
 require_once __DIR__ . '/../class/class.Usuario.php';
 
+
+
+
 // Comprobamos que se ha accedido a esta api mediante POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405); // Método no permitido
@@ -54,11 +57,12 @@ switch($tarea) {
                 $usuario->guardar();
 
                 // Crear la sesión
-                require_once __DIR__."/../class/class.SecureSessionHandler.php";
+                require_once __DIR__ . '/../class/class.SecureSessionHandler.php';
                 $sesion = new SecureSessionHandler();
                 $sesion->start();
-                $sesion->write("id", $usuario->getId());
-                $sesion->write("ip", obtenerIpUsuario());
+                $sesion->write('id', $usuario->getId());
+                $sesion->write('ip', obtenerIpUsuario());
+
                 $respuesta['exito'] = 1;
                 $respuesta['mensaje'] = 'Login correcto';
             } else {
@@ -78,6 +82,7 @@ switch($tarea) {
         }
 
         break;
+
     default:
         $respuesta['exito'] = 0;
         $respuesta['mensaje'] = 'Error en la petición';

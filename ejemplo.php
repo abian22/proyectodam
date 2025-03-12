@@ -1,20 +1,33 @@
 <?php
 
-// require_once __DIR__."/api/comprobar.sesion.php";
 
+require_once __DIR__.'/class/class.Usuario.php';
 
-
-// $usuario = new Usuario(20);
-// $usuario->setPassword("1234");
-// $usuario->guardar();
-// var_dump($usuario->checkPassword(("123456"))); 
-
-require_once __DIR__ . '/config/config.globales.php';
-require_once __DIR__ . '/class/class.Usuario.php';
-$usuario = new Usuario(1);
+$usuario = new Usuario();
 echo "<pre>";
-print_r($usuario);
+var_dump($usuario);
 echo "</pre>";
+
+$usuario->setNombre('alejando');
+$usuario->setApellidos('fernandez');
+$usuario->setEmail('alejando@gmail.com');
 $usuario->setPassword('1234');
+$usuario->setRol('JUGADOR');
 $usuario->guardar();
-var_dump($usuario->checkPassword(("1234"))); 
+
+echo "<pre>";
+var_dump($usuario);
+echo "</pre>";
+
+
+// require_once __DIR__.'/class/class.Paciente.php';
+
+// $paciente = new Paciente(1);
+// $paciente->setNif(null);
+// $paciente->setNombre('CARLOS');
+// $paciente->setApellidos('PÉREZ DÍAZ');
+// $paciente->setEmail(null);
+// $paciente->setTelefonoMovil('600101010');
+
+// var_dump($paciente->guardar());
+// var_dump($paciente->eliminar());

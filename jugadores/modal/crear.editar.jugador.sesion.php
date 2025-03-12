@@ -1,0 +1,81 @@
+<?php
+require_once __DIR__ . '/../../class/class.Usuario.php';
+
+// Cargar los entrenadores
+$entrenadores = listadoUsuarios(['id', 'apellidos', 'nombre'], 'ENTRENADOR');
+
+// Preparar las opciones del select para los entrenadores
+$opcionesSelectEntrenadores = '';
+foreach($entrenadores as $entrenador) {
+    $opcionesSelectEntrenadores .= '<option value="'.$entrenador['id'].'">'.$entrenador['apellidos'].', '.$entrenador['nombre'].'</option>';
+}
+?>
+
+<!-- Modal: Crear/Editar sesión jugador -->
+<div class="modal fade" id="modal-crear-editar-sesion-jugador" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-bandaid"></i> Añadir/Editar sesión jugador</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <form id="form-crear-editar-sesion-jugador">
+                            <!-- Campo oculto para el ID de la sesión -->
+                            <input type="hidden" id="form-crear-editar-sesion-jugador-id" name="id" value="0">
+
+                            <div class="row">
+                                <!-- Fecha y hora de la sesión -->
+                                <div class="col-12 col-lg-3">
+                                    <div class="form-floating mb-3">
+                                        <input type="datetime-local" class="form-control" value="" id="form-crear-editar-sesion-jugador-fechaHora" name="fechaHora" placeholder="Fecha Hora">
+                                        <label for="form-crear-editar-sesion-jugador-fechaHora">Fecha Hora</label>
+                                    </div>
+                                </div>
+
+                                <!-- Selección del Entrenador -->
+                                <div class="col-12 col-lg-5">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="form-crear-editar-sesion-jugador-idEntrenador" name="idEntrenador" aria-label="Floating label select example">
+                                            <option value="0" selected>Seleccione un Entrenador</option>
+                                            <?php echo $opcionesSelectEntrenadores; ?>
+                                        </select>
+                                        <label for="form-crear-editar-sesion-jugador-idEntrenador">Seleccionar Entrenador</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Feedback de validación -->
+                                <div class="col-12 text-center">
+                                    <div class="mb-3">
+                                        <span class="badge" id="form-crear-editar-sesion-jugador-feedback"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="row mt-2">
+                                <!-- Observaciones -->
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea style="height: 150px" class="form-control" placeholder="Observaciones" id="form-crear-editar-sesion-jugador-observaciones" name="observaciones"></textarea>
+                                        <label for="form-crear-editar-sesion-jugador-observaciones">Observaciones</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer bg-dark-subtle">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
+                <button type="button" class="btn btn-success" onclick="guardarSesionJugador(this)"><i class="bi bi-cloud-arrow-up"></i> Guardar Datos</button>
+            </div>
+        </div>
+    </div>
+</div>

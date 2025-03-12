@@ -20,9 +20,15 @@ const FICHERO_LOG_DB = CONFIG_DB['DB_LOG_FILE'];
 
 # Nombres de las tablas
 const TABLA_USUARIOS = 'usuarios';
+const TABLA_JUEGOS = 'juegos';
+const TABLA_ESPECIALIDAD = 'especialidad';
+const TABLA_SESIONES = 'sesiones';
 
 const TABLAS_OBJETO_DB = [
-    'Usuario' => TABLA_USUARIOS
+    'Usuario' => TABLA_USUARIOS,
+    'Juego' => TABLA_JUEGOS,
+    'Especialidad'=> TABLA_ESPECIALIDAD,
+    'Sesion'=> TABLA_SESIONES
 ];
 
 # Definición de la clase GestorDBPDO
@@ -95,7 +101,7 @@ class HandlerDB {
      * Devuelve false si la consulta no se pudo ejecutar y almacena el error en el log
      * Devuelve el conjunto de resultados si la consulta se pudo ejecutar correctamente
      ***********************************************************************************************/
-    public function obtenerRegistros(string $tabla, array $datosRequeridos, string $clausulaWhere, array $parametrosWhere, string | null $ordenSeleccion, string $tipoFetch, int | null $limit = null, int | null $offset = null): array | false {
+    public function obtenerRegistros(string $tabla, array $datosRequeridos, string $clausulaWhere, array | null $parametrosWhere, string | null $ordenSeleccion, string $tipoFetch, int | null $limit = null, int | null $offset = null): array | false {
         // Preparamos la consulta
         $sqlParametrosSelect = implode(",",$datosRequeridos);
         $consultaSql = "SELECT {$sqlParametrosSelect} FROM {$tabla}";

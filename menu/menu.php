@@ -15,7 +15,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="<?php echo CONFIG_GENERAL["RUTA_URL_BASE"]?>/jugadores">Jugadores</a></li>
-                        <li><a class="dropdown-item" href="#">Entrenadores</a></li>
+                        <li><a class="dropdown-item" href="<?php echo CONFIG_GENERAL["RUTA_URL_BASE"]?>/entrenadores">Entrenadores</a></li>
                     </ul>
                 </li>
 

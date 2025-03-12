@@ -1,107 +1,236 @@
 function abrirModalJugador(boton, id) {
-  $("#form-crear-editar-jugador-id").val(id);
+    $("#form-crear-editar-jugador-id").val(id);
 
-  $(".form-control").removeClass("is-invalid");
-  $("#form-crear-editar-jugador-feedback").removeClass(
-    "text-bg-danger text-bg-success"
-  );
-  $("#form-crear-editar-jugador-feedback").html("");
+    $(".form-control").removeClass("is-invalid");
+    $("#form-crear-editar-jugador-feedback").removeClass("text-bg-danger text-bg-success");
+    $("#form-crear-editar-jugador-feedback").html('');
 
-  if (id > 0) {
-    let formData = new FormData();
-    formData.append("tarea", "CARGAR_JUGADOR");
-    formData.append("id", $("#form-crear-editar-jugador-id").val());
-    $(".form-control").val("");
-    
-    $.ajax({
-      url: RUTA_URL_API + "/api.jugador.php",
-      method: "POST",
-      data: formData, // Enviar el objeto FormData
-      contentType: false, // No establecer el encabezado Content-Type manualmente
-      processData: false, // No procesar los datos (necesario para FormData)
+    if (id > 0) {
+        $(".form-control").val('');
 
-      success: function (respuesta) {
-        if (respuesta.exito === 0) {
-          alert(respuesta.mensaje);
-        }
+        let formData = new FormData();
+        formData.append('tarea', 'CARGAR_JUGADOR');
+        formData.append('id', $("#form-crear-editar-jugador-id").val());
 
-        if (respuesta.exito === 1) {
-          $("#form-crear-editar-jugador-nombre").val(respuesta.datos.nombre);
-          $("#form-crear-editar-jugador-apellidos").val(
-            respuesta.datos.apellidos
-          );
-          $("#form-crear-editar-jugador-email").val(respuesta.datos.email);
-          $("#form-crear-editar-jugador-juego").val(respuesta.datos.juego);
-          $("#form-crear-editar-jugador-ranking").val(respuesta.datos.ranking);
-          $("#form-crear-editar-jugador-especialidad").val(
-            respuesta.datos.especialidad
-          );
-          $("#form-crear-editar-jugador-bloqueado").prop(
-            "checked",
-            respuesta.datos.bloqueado
-          );
-        }
-      },
-      error: function (xhr, status, error) {
-        console.error("Error en la solicitud:", error);
-        alert("Ocurrió un error al enviar el formulario");
-      },
-    });
-  } else {
-    $(".form-control").val("");
-  }
-  $("#modal-crear-editar-jugador").modal("show");
+        $.ajax({
+            url: RUTA_URL_API + '/api.jugador.php',
+            method: 'POST',
+            data: formData, // Enviar el objeto FormData
+            contentType: false, // No establecer el encabezado Content-Type manualmente
+            processData: false, // No procesar los datos (necesario para FormData)
+
+            success: function (respuesta) {
+                if (respuesta.exito === 0) {
+                    alert(respuesta.mensaje);
+                }
+
+                if (respuesta.exito === 1) {
+                    $("#form-crear-editar-jugador-nombre").val(respuesta.datos.nombre);
+                    $("#form-crear-editar-jugador-apellidos").val(respuesta.datos.apellidos);
+                    $("#form-crear-editar-jugador-email").val(respuesta.datos.email);
+
+                    $("#form-crear-editar-jugador-bloqueado").prop('checked', respuesta.datos.bloqueado);
+
+                    $("#modal-crear-editar-jugador").modal("show");
+                }
+            }
+            ,
+
+            error: function (xhr, status, error) {
+                console.error('Error en la solicitud:', error);
+                alert('Ocurrió un error al enviar el formulario');
+            }
+        });
+    } else {
+        $(".form-control").val('');
+        $("#modal-crear-editar-jugador").modal("show");
+    }
 }
 
+
 function guardarJugador(boton) {
-  const form = $("#form-crear-editar-jugador").get(0);
+    const form = $("#form-crear-editar-jugador").get(0);
 
-  $(".form-control").removeClass("is-invalid");
-  $("#form-crear-editar-jugador-feedback").removeClass(
-    "text-bg-danger text-bg-success"
-  );
-  $("#form-crear-editar-jugador-feedback").html("");
+    $(".form-control").removeClass("is-invalid");
+    $("#form-crear-editar-jugador-feedback").removeClass("text-bg-danger text-bg-success");
+    $("#form-crear-editar-jugador-feedback").html('');
 
-  let formData = new FormData(form);
-  formData.append("tarea", "GUARDAR_JUGADOR");
-  formData.set(
-    "bloqueado",
-    $("#form-crear-editar-jugador-bloqueado").prop("checked")
-  );
+    let formData = new FormData(form);
+    formData.append('tarea', 'GUARDAR_JUGADOR');
+    formData.set('bloqueado', $("#form-crear-editar-jugador-bloqueado").prop('checked'));
 
-  $.ajax({
-    url: RUTA_URL_API + "/api.jugador.php",
-    method: "POST",
-    data: formData, // Enviar el objeto FormData
-    contentType: false, // No establecer el encabezado Content-Type manualmente
-    processData: false, // No procesar los datos (necesario para FormData)
+    $.ajax({
+        url: RUTA_URL_API + '/api.jugador.php',
+        method: 'POST',
+        data: formData, // Enviar el objeto FormData
+        contentType: false, // No establecer el encabezado Content-Type manualmente
+        processData: false, // No procesar los datos (necesario para FormData)
 
-    success: function (respuesta) {
-      if (respuesta.exito === 0) {
-        $("#form-crear-editar-jugador-feedback").addClass("text-bg-danger");
-        $("#form-crear-editar-jugador-feedback").html(respuesta.mensaje);
+        success: function (respuesta) {
+            if (respuesta.exito === 0) {
+                $("#form-crear-editar-jugador-feedback").addClass('text-bg-danger');
+                $("#form-crear-editar-jugador-feedback").html(respuesta.mensaje);
 
-        if (respuesta.errorEmail == 1) {
-          $("#form-crear-editar-jugador-email").addClass("is-invalid");
+                if (respuesta.errorEmail == 1) {
+                    $("#form-crear-editar-jugador-email").addClass('is-invalid');
+                }
+
+                if (respuesta.errorPassword == 1) {
+                    $("#form-crear-editar-jugador-password1").addClass('is-invalid');
+                    $("#form-crear-editar-jugador-password2").addClass('is-invalid');
+                }
+
+                if (respuesta.errorNombreApellidos == 1) {
+                    $("#form-crear-editar-jugador-nombre").addClass('is-invalid');
+                    $("#form-crear-editar-jugador-apellidos").addClass('is-invalid');
+                }
+            }
+
+            if (respuesta.exito === 1) {
+                $("#modal-crear-editar-jugador").modal("hide");
+            }
         }
-        if (respuesta.errorPassword == 1) {
-          $("#form-crear-editar-jugador-password1").addClass("is-invalid");
-          $("#form-crear-editar-jugador-password2").addClass("is-invalid");
-        }
-        if (respuesta.errorNombreApellidos == 1) {
-          $("#form-crear-editar-jugador-nombre").addClass("is-invalid");
-          $("#form-crear-editar-jugador-apellidos").addClass("is-invalid");
+        ,
 
+        error: function (xhr, status, error) {
+            console.error('Error en la solicitud:', error);
+            alert('Ocurrió un error al enviar el formulario');
         }
-      }
+    });
 
-      if (respuesta.exito === 1) {
-        $("#modal-crear-editar-jugador").modal("hide");
-      }
-    },
-    error: function (xhr, status, error) {
-      console.error("Error en la solicitud:", error);
-      alert("Ocurrió un error al enviar el formulario");
-    },
-  });
+}
+
+
+function abrirModalSesionJugador(boton, id) {
+    // Establecer el ID de la sesión en el formulario
+    $("#form-crear-editar-sesion-jugador-id").val(id);
+
+    var idJugador = document.getElementById("idJugador").value;
+    console.log("ID del jugador:", idJugador); // Verifica que la ID se imprime correctamente en la consola
+    console.log("ID de la sesión:", id); // Usa el ID correcto de la sesión
+
+    // Limpiar los campos de la sesión y el feedback
+    $(".form-control").removeClass("is-invalid");
+    $(".form-control").val("");
+    $("#form-crear-editar-sesion-jugador-feedback").removeClass("text-bg-danger text-bg-success");
+    $("#form-crear-editar-sesion-jugador-feedback").html('');
+
+    // Si el ID es mayor que 0, significa que estamos editando una sesión existente
+    if (id > 0) {
+        let formData = new FormData();
+        formData.append('tarea', 'CARGAR_SESION');
+        formData.append('id', id);
+
+        $.ajax({
+            url: RUTA_URL_API + '/api.sesion.php',
+            method: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+
+            success: function (respuesta) {
+                if (respuesta.exito === 0) {
+                    alert(respuesta.mensaje);
+                }
+
+                if (respuesta.exito === 1) {
+                    // Rellenar los campos del formulario con los datos de la sesión
+                    $.each(respuesta.datos, function(campo, valor) {
+                        $("#form-crear-editar-sesion-jugador-" + campo).val(valor);
+                    });
+
+                    // Abrir el modal para editar la sesión
+                    $("#modal-crear-editar-sesion-jugador").modal("show");
+                }
+            },
+
+            error: function (xhr, status, error) {
+                console.error('Error en la solicitud:', error);
+                alert('Ocurrió un error al enviar el formulario');
+            }
+        });
+    } else {
+        // Si el ID es 0, simplemente abre el modal para crear una nueva sesión
+        $(".form-control").val('');
+        $("#modal-crear-editar-sesion-jugador").modal("show");
+    }
+}
+
+
+function guardarSesionJugador(boton) {
+    const form = $("#form-crear-editar-sesion-jugador").get(0);
+
+    $(".form-control").removeClass("is-invalid");
+    $("#form-crear-editar-cita-jugador-feedback").removeClass("text-bg-danger text-bg-success");
+    $("#form-crear-editar-cita-jugador-feedback").html('');
+
+    let formData = new FormData(form);
+    formData.append('tarea', 'GUARDAR_SESION');
+    formData.append('idJugador', $("#idJugador").val()); /**/
+
+    $.ajax({
+        url: RUTA_URL_API + '/api.sesion.php',
+        method: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+
+        success: function (respuesta) {
+            if (respuesta.exito === 0) {
+                if (respuesta.errorFecha == 1) {
+                    $("#form-crear-editar-sesion-jugador-fechaHora").addClass('is-invalid');
+                }
+                $("#form-crear-editar-sesion-jugador-feedback").addClass('text-bg-danger');
+                $("#form-crear-editar-sesion-jugador-feedback").html(respuesta.mensaje);
+            }
+
+            if (respuesta.exito === 1) {
+                $("#modal-crear-editar-sesion-jugador").modal("hide");
+                location.reload();
+            }
+        }
+        ,
+
+        error: function (xhr, status, error) {
+            console.error('Error en la solicitud:', error);
+            alert('Ocurrió un error al enviar el formulario');
+        }
+    });
+
+}
+
+
+function eliminarSesionJugador(boton, id) {
+    if (!confirm('¿Está seguro de que desea eliminar la cita?')) {
+        return false;
+    }
+
+    let formData = new FormData();
+    formData.append('tarea', 'ELIMINAR_SESION');
+    formData.append('id', id);
+
+    $.ajax({
+        url: RUTA_URL_API + '/api.sesion.php',
+        method: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+
+        success: function (respuesta) {
+            if (respuesta.exito === 0) {
+                alert(respuesta.mensaje);
+            }
+
+            if (respuesta.exito === 1) {
+                location.reload();
+            }
+        }
+        ,
+
+        error: function (xhr, status, error) {
+            console.error('Error en la solicitud:', error);
+            alert('Ocurrió un error al enviar el formulario');
+        }
+    });
+
 }

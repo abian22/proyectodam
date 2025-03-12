@@ -26,7 +26,7 @@ if (is_null($tarea)) {
 
 $respuesta = array();
 switch($tarea) {
-    case 'CARGAR_JUGADOR':
+    case 'CARGAR_ENTRENADOR':
         $id = intval($_POST['id']);
         $usuario = new Usuario($id);
         if ($usuario->getId() == 0) {
@@ -44,12 +44,13 @@ switch($tarea) {
         $respuesta['datos'] = $datos;
         break;
 
-    case 'GUARDAR_JUGADOR':
+    case 'GUARDAR_ENTRENADOR':
         $id = intval($_POST['id']);
         $usuario = new Usuario($id);
 
         $nombre = sanitizarString(trim($_POST["nombre"]));
         $apellidos = sanitizarString(trim($_POST["apellidos"]));
+        
 
         if (strlen($nombre) == 0 || strlen($apellidos) == 0) {
             $respuesta['exito'] = 0;
@@ -73,7 +74,7 @@ switch($tarea) {
         $usuario->setBloqueado(!($_POST["bloqueado"] === 'false'));
 
         $usuario->setEmail(sanitizarString($_POST["email"]));
-        $usuario->setRol("JUGADOR");
+        $usuario->setRol("ENTRENADOR");
 
         $password1 = sanitizarStringPassword($_POST["password1"]);
         $password2 = sanitizarStringPassword($_POST["password2"]);
