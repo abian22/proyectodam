@@ -70,7 +70,8 @@ function generarConsultaListadoTablaEntrenadores(string $textoBusqueda = "", int
             ud.nombre,
             ud.apellidos,
             ud.email,
-            ud.rol,
+            ud.rol,           
+            j.id AS juego_id,
             j.nombre AS juego,
             e.especialidad
         FROM ' . TABLA_USUARIOS . ' ud
@@ -117,7 +118,15 @@ function listadoTablaEntrenadores(string $textoBusqueda = "", int $limit = 0, in
             $jsonDatos[$i]['apellidos'] = $fila['apellidos'];
             $jsonDatos[$i]['email'] = $fila['email'];
             $jsonDatos[$i]['rol'] = $fila['rol'];
-            $jsonDatos[$i]['juego'] = $fila['juego'];;
+            $jsonDatos[$i]['j.id'] = $fila['juego_id'];
+            if ($jsonDatos[$i]['j.id'] == 1) {
+                $jsonDatos[$i]['juego'] = $fila['juego'] . ' <img src="../img/juegos/lol.png" alt="Imagen" style="width: 20px; height: auto;">';
+            } elseif ($jsonDatos[$i]['j.id'] == 2) {
+                $jsonDatos[$i]['juego'] = $fila['juego'] . ' <img src="../img/juegos/valorant.png" alt="Imagen" style="width: 20px; height: auto;">';
+            } elseif ($jsonDatos[$i]['j.id'] == 3) {
+                $jsonDatos[$i]['juego'] = $fila['juego'] . ' <img src="../img/juegos/csgo.ico" alt="Imagen" style="width: 20px; height: auto;">';
+            } else  $jsonDatos[$i]['juego'] = $fila['juego'];
+
             $jsonDatos[$i]['especialidad'] = $fila['especialidad'];
             $jsonDatos[$i]['acciones']  = '<button class="btn btn-warning" onclick="abrirModalEntrenador(this,' . $fila['id'] . ')">Editar</button>';
             $jsonDatos[$i]['acciones'] .= '<a class="btn btn-success ms-1" href="entrenador.php?id=' . $fila['id'] . '">Ver</a>';

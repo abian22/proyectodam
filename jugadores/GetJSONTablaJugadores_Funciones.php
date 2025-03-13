@@ -71,6 +71,7 @@ function generarConsultaListadoTablaJugadores(string $textoBusqueda = "", int $l
             ud.apellidos,
             ud.email,
             ud.rol,
+            j.id AS juego_id,
             j.nombre AS juego,
             e.especialidad
         FROM ' . TABLA_USUARIOS . ' ud
@@ -108,23 +109,33 @@ function generarConsultaListadoTablaJugadores(string $textoBusqueda = "", int $l
 function listadoTablaJugadores(string $textoBusqueda = "", int $limit = 0, int $offset = 0, string | int $sortby = 0, string | int $order = ""): array | bool {
     $resultadosConsulta = generarConsultaListadoTablaJugadores($textoBusqueda, $limit, $offset, $sortby, $order);
 
+    
     if ($resultadosConsulta !== false) {
         $jsonDatos = array();
-
+        
+   
         $i = 0;
         foreach($resultadosConsulta['datos'] as $fila) {
             $jsonDatos[$i]['nombre'] = $fila['nombre'];
             $jsonDatos[$i]['apellidos'] = $fila['apellidos'];
             $jsonDatos[$i]['email'] = $fila['email'];
             $jsonDatos[$i]['rol'] = $fila['rol'];
-            $jsonDatos[$i]['juego'] = $fila['juego'];
+            $jsonDatos[$i]['j.id'] = $fila['juego_id'];
+            if ($jsonDatos[$i]['j.id'] == 1) {
+                $jsonDatos[$i]['juego'] = $fila['juego'] . ' <img src="../img/juegos/lol.png" alt="Imagen" style="width: 20px; height: auto;">';
+            } elseif ($jsonDatos[$i]['j.id'] == 2) {
+                $jsonDatos[$i]['juego'] = $fila['juego'] . ' <img src="../img/juegos/valorant.png" alt="Imagen" style="width: 20px; height: auto;">';
+            } elseif ($jsonDatos[$i]['j.id'] == 3) {
+                $jsonDatos[$i]['juego'] = $fila['juego'] . ' <img src="../img/juegos/csgo.ico" alt="Imagen" style="width: 20px; height: auto;">';
+            } else  $jsonDatos[$i]['juego'] = $fila['juego'];
+
             $jsonDatos[$i]['especialidad'] = $fila['especialidad'];
             $jsonDatos[$i]['acciones']  = '<button class="btn btn-warning" onclick="abrirModalJugador(this,'.$fila['id'].')">Editar</button>';
             $jsonDatos[$i]['acciones'] .= '<a class="btn btn-success ms-1" href="jugador.php?id='.$fila['id'].'">Ver</a>';
 
+
             $i++;
         }
-
         $respuesta['total'] = $resultadosConsulta['totalFilas'];
         $respuesta['rows'] = $jsonDatos;
 

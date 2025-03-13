@@ -19,7 +19,7 @@ global $usuarioActual;
     <!-- Configuración Global JS -->
     <script src="../config/config.globales.js"></script>
 
-    <!-- JS para la gestión de dentistas -->
+    <!-- JS para la gestión de jugadores -->
     <script src="./js/funciones.jugador.js"></script>
 </head>
 <body>
@@ -45,7 +45,7 @@ global $usuarioActual;
                     <button class="btn btn-success" onclick="abrirModalJugador(this, 0)">Añadir Jugador</button>
                 </div>
             </div>
-            <!-- Tabla listado dentistas -->
+            <!-- Tabla listado jugadores -->
             <div class="row">
                 <div class="col-12">
                     <table class="table-striped tablaListado" id="tablaListadoJugadores" data-toggle="table"

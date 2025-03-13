@@ -102,25 +102,18 @@ function guardarJugador(boton) {
 
 
 function abrirModalSesionJugador(boton, id) {
-    // Establecer el ID de la sesión en el formulario
+
     $("#form-crear-editar-sesion-jugador-id").val(id);
 
-    var idJugador = document.getElementById("idJugador").value;
-    console.log("ID del jugador:", idJugador); // Verifica que la ID se imprime correctamente en la consola
-    console.log("ID de la sesión:", id); // Usa el ID correcto de la sesión
-
-    // Limpiar los campos de la sesión y el feedback
     $(".form-control").removeClass("is-invalid");
     $(".form-control").val("");
     $("#form-crear-editar-sesion-jugador-feedback").removeClass("text-bg-danger text-bg-success");
     $("#form-crear-editar-sesion-jugador-feedback").html('');
 
-    // Si el ID es mayor que 0, significa que estamos editando una sesión existente
     if (id > 0) {
         let formData = new FormData();
         formData.append('tarea', 'CARGAR_SESION');
-        formData.append('id', id);
-
+        formData.append('id', $("#form-crear-editar-sesion-jugador-id").val());
         $.ajax({
             url: RUTA_URL_API + '/api.sesion.php',
             method: 'POST',
@@ -134,12 +127,11 @@ function abrirModalSesionJugador(boton, id) {
                 }
 
                 if (respuesta.exito === 1) {
-                    // Rellenar los campos del formulario con los datos de la sesión
+          
                     $.each(respuesta.datos, function(campo, valor) {
                         $("#form-crear-editar-sesion-jugador-" + campo).val(valor);
                     });
 
-                    // Abrir el modal para editar la sesión
                     $("#modal-crear-editar-sesion-jugador").modal("show");
                 }
             },
@@ -150,7 +142,6 @@ function abrirModalSesionJugador(boton, id) {
             }
         });
     } else {
-        // Si el ID es 0, simplemente abre el modal para crear una nueva sesión
         $(".form-control").val('');
         $("#modal-crear-editar-sesion-jugador").modal("show");
     }
@@ -166,7 +157,7 @@ function guardarSesionJugador(boton) {
 
     let formData = new FormData(form);
     formData.append('tarea', 'GUARDAR_SESION');
-    formData.append('idJugador', $("#idJugador").val()); /**/
+    formData.append('idJugador', $("#idJugador").val()); 
 
     $.ajax({
         url: RUTA_URL_API + '/api.sesion.php',

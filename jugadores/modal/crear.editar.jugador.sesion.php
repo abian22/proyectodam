@@ -1,10 +1,8 @@
 <?php
 require_once __DIR__ . '/../../class/class.Usuario.php';
 
-// Cargar los entrenadores
 $entrenadores = listadoUsuarios(['id', 'apellidos', 'nombre'], 'ENTRENADOR');
 
-// Preparar las opciones del select para los entrenadores
 $opcionesSelectEntrenadores = '';
 foreach($entrenadores as $entrenador) {
     $opcionesSelectEntrenadores .= '<option value="'.$entrenador['id'].'">'.$entrenador['apellidos'].', '.$entrenador['nombre'].'</option>';
@@ -23,11 +21,9 @@ foreach($entrenadores as $entrenador) {
                 <div class="row">
                     <div class="col-12">
                         <form id="form-crear-editar-sesion-jugador">
-                            <!-- Campo oculto para el ID de la sesión -->
                             <input type="hidden" id="form-crear-editar-sesion-jugador-id" name="id" value="0">
 
                             <div class="row">
-                                <!-- Fecha y hora de la sesión -->
                                 <div class="col-12 col-lg-3">
                                     <div class="form-floating mb-3">
                                         <input type="datetime-local" class="form-control" value="" id="form-crear-editar-sesion-jugador-fechaHora" name="fechaHora" placeholder="Fecha Hora">
@@ -35,7 +31,6 @@ foreach($entrenadores as $entrenador) {
                                     </div>
                                 </div>
 
-                                <!-- Selección del Entrenador -->
                                 <div class="col-12 col-lg-5">
                                     <div class="form-floating">
                                         <select class="form-select" id="form-crear-editar-sesion-jugador-idEntrenador" name="idEntrenador" aria-label="Floating label select example">
@@ -48,7 +43,6 @@ foreach($entrenadores as $entrenador) {
                             </div>
 
                             <div class="row">
-                                <!-- Feedback de validación -->
                                 <div class="col-12 text-center">
                                     <div class="mb-3">
                                         <span class="badge" id="form-crear-editar-sesion-jugador-feedback"></span>
@@ -59,7 +53,6 @@ foreach($entrenadores as $entrenador) {
                             <hr>
 
                             <div class="row mt-2">
-                                <!-- Observaciones -->
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea style="height: 150px" class="form-control" placeholder="Observaciones" id="form-crear-editar-sesion-jugador-observaciones" name="observaciones"></textarea>

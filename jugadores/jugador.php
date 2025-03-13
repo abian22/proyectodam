@@ -9,9 +9,8 @@ global $usuarioActual;
 $id = intval($_GET['id']);
 $usuario = new Usuario($id);
 
-# Preparamos el listado de citas del paciente
+# Preparamos el listado de sesiones de los jugadores
 $sesiones = listadoSesionesJugador($usuario->getId());
-var_dump($sesiones);
 $filasSesionesHtml = '';
 foreach ($sesiones as $sesion) {
 
@@ -42,11 +41,9 @@ foreach ($sesiones as $sesion) {
     <?php include(__DIR__ . '/../header/header.php'); ?>
     <?php include(__DIR__ . '/../header/header_bootstraptable.php'); ?>
 
-
-    <!-- Configuración Global JS -->
     <script src="../config/config.globales.js"></script>
 
-    <!-- JS para la gestión de dentistas -->
+
     <script src="./js/funciones.jugador.js"></script>
 </head>
 

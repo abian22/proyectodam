@@ -1,6 +1,6 @@
 <?php
-require_once (__DIR__ . "/api/comprobar.sesion.php");
-require_once(__DIR__.'/config/config.globales.php');
+require_once(__DIR__ . "/api/comprobar.sesion.php");
+require_once(__DIR__ . '/config/config.globales.php');
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ require_once(__DIR__.'/config/config.globales.php');
     <title><?php echo CONFIG_GENERAL["TITULO_WEB"]; ?> - Acceso</title>
 
     <!-- Header Común a todas las páginas de la aplicación -->
-    <?php include(__DIR__.'/header/header.php'); ?>
+    <?php include(__DIR__ . '/header/header.php'); ?>
 
     <!-- Configuración Global JS -->
     <script src="./config/config.globales.js"></script>
@@ -21,25 +21,25 @@ require_once(__DIR__.'/config/config.globales.php');
     <script src="./js/funciones.usuario.js"></script>
 </head>
 
-<body class="bg-primary">
+<body>
 
     <?php include(__DIR__ . "/menu/menu.php") ?>
 
     <!-- Zona derecha: formulario de acceso -->
-    <div class="col-lg-12col-12  text-white d-flex justify-content-center align-items-center">
+    <div class="col-lg-12col-12  d-flex justify-content-center align-items-center">
         <div class="w-100" style="max-width: 400px;">
-            <h2 class="text-center text-white mb-4 mt-4">Cambiar Password</h2>
+            <h2 class="text-center mb-4 mt-4">Cambiar Password</h2>
             <form id="form-cambio-password">
                 <div class="mb-3">
-                    <label for="form-login-password" class="form-label text-white">Password actual</label>
+                    <label for="form-login-password" class="form-label ">Password actual</label>
                     <input type="text" class="form-control" name="passwordActual" id="form-cambio-password-password-actual" placeholder="Introduzca su contraseña actual">
                 </div>
                 <div class="mb-3">
-                    <label for="form-login-password" class="form-label text-white">Password nueva <small>(debe contener mayúscula, minúscula, número y símbolo)</small></label>
+                    <label for="form-login-password" class="form-label ">Password nueva <small>(debe contener mayúscula, minúscula, número y símbolo)</small></label>
                     <input type="password" class="form-control" name="passwordNueva1" id="form-cambio-password-password-1" placeholder="Introduzca la nueva contraseña">
                 </div>
                 <div class="mb-3">
-                    <label for="form-login-password" class="form-label text-white">Repita la password nueva</label>
+                    <label for="form-login-password" class="form-label ">Repita la password nueva</label>
                     <input type="password" class="form-control" name="passwordNueva2" id="form-cambio-password-password-2" placeholder="Introduzca la nueva password">
                 </div>
                 <div class="mb-3">

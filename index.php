@@ -18,7 +18,7 @@ global $usuarioActual;
     <!-- Configuración Global JS -->
     <script src="./config/config.globales.js"></script>
 </head>
-<body class="bg-primary">
+<body >
     <?php include_once __DIR__.'/menu/menu.php'; ?>
 
     <div class="container mt-2 ">

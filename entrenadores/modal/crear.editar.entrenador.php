@@ -60,14 +60,10 @@
                                             <option value="" disabled selected>Seleccione un juego para elegir especialidad</option>
                                             <?php
                                             $gestorDB = new HandlerDB();
-                                            $sqlEspecialidades = "SELECT id, especialidad, 
-                                            CASE 
-                                                WHEN id BETWEEN 16 AND 19 THEN 1 
-                                                WHEN id BETWEEN 20 AND 23 THEN 2 
-                                                ELSE 3 
-                                            END AS juego_id
-                                            FROM " . TABLA_ESPECIALIDAD . " 
-                                            WHERE rol_especialidad = 'ENTRENADOR'";
+                                            $sqlEspecialidades = "SELECT e.id, e.especialidad, e.juego_id
+                                            FROM " . TABLA_ESPECIALIDAD . " e
+                                            JOIN " . TABLA_JUEGOS . " j ON e.juego_id = j.id  
+                                            WHERE e.rol_especialidad = 'ENTRENADOR'";
                                             $stmtEspecialidades = $gestorDB->dbh->prepare($sqlEspecialidades);
                                             $stmtEspecialidades->execute();
                                             $especialidades = $stmtEspecialidades->fetchAll(PDO::FETCH_ASSOC);

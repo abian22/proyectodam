@@ -60,17 +60,14 @@
                                             <option value="" disabled selected>Seleccione un juego para elegir especialidad</option>
                                             <?php
                                             $gestorDB = new HandlerDB();
-                                            $sqlEspecialidades = "SELECT id, especialidad, 
-                                            CASE 
-                                                WHEN id BETWEEN 1 AND 5 THEN 1 
-                                                WHEN id BETWEEN 6 AND 9 THEN 2 
-                                                ELSE 3 
-                                            END AS juego_id
-                                            FROM " . TABLA_ESPECIALIDAD . " 
-                                            WHERE rol_especialidad = 'JUGADOR'";
-                                            $stmtEspecialidades = $gestorDB->dbh->prepare($sqlEspecialidades);
-                                            $stmtEspecialidades->execute();
-                                            $especialidades = $stmtEspecialidades->fetchAll(PDO::FETCH_ASSOC);
+                                            $sqlEspecialidades = "SELECT e.id, e.especialidad, e.juego_id
+                                            FROM " . TABLA_ESPECIALIDAD . " e
+                                            JOIN " . TABLA_JUEGOS . " j ON e.juego_id = j.id  
+                                            WHERE e.rol_especialidad = 'JUGADOR'";
+                                        $stmtEspecialidades = $gestorDB->dbh->prepare($sqlEspecialidades);
+                                        $stmtEspecialidades->execute();
+                                        $especialidades = $stmtEspecialidades->fetchAll(PDO::FETCH_ASSOC);
+                                        
                                             foreach ($especialidades as $especialidad) {
                                                 echo "<option value='{$especialidad['id']}' data-juego='{$especialidad['juego_id']}' style='display: none;'>";
                                                 echo "{$especialidad['especialidad']}</option>";
@@ -125,13 +122,12 @@
     </div>
 </div>
 
-<!-- Script para actualizar especialidades -->
+<!-- Script para actualizar especialidades dependiendo del juego -->
 <script>
     document.getElementById("form-crear-editar-jugador-juego").addEventListener("change", function() {
         let juegoId = this.value;
         let especialidadSelect = document.getElementById("form-crear-editar-jugador-especialidad");
 
-        // Ocultar todas las opciones
         let roles = especialidadSelect.querySelectorAll("option");
         roles.forEach(rol => {
             if (rol.getAttribute("data-juego") === juegoId) {
@@ -141,7 +137,6 @@
             }
         });
 
-        // Resetear selección
         especialidadSelect.value = "";
     });
 </script>

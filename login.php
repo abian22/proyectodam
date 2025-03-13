@@ -26,9 +26,9 @@ require_once(__DIR__.'/config/config.globales.php');
         <div class="col-lg-6 d-none d-lg-block bg-image" style="background: url('<?php echo CONFIG_GENERAL['RUTA_URL_BASE'] ?>/img/login/background.jpg') no-repeat center center; background-size: cover;"></div>
 
         <!-- Zona derecha: formulario de acceso -->
-        <div class="col-lg-6 col-12 bg-primary text-white d-flex justify-content-center align-items-center">
-            <div class="w-100" style="max-width: 400px;">
-                <h2 class="text-center mb-4">DAMDentista 1.0</h2>
+        <div class="col-lg-6 col-12 text-white d-flex justify-content-center align-items-center" style="background: linear-gradient(135deg, rgb(161, 117, 219), rgb(25, 28, 216), rgb(61, 6, 133));">
+        <div class="w-100" style="max-width: 400px;">
+                <h2 class="text-center mb-4">Proyecto</h2>
                 <form id="form-login">
                     <div class="mb-3">
                         <label for="form-login-usuario" class="form-label">Usuario</label>
@@ -42,7 +42,7 @@ require_once(__DIR__.'/config/config.globales.php');
                         <span class="badge" id="form-login-feedback"></span>
                     </div>
                     <button class="btn btn-warning w-100">Acceder</button>
-                </form>
+                    </form>
             </div>
         </div>
 

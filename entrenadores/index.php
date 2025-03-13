@@ -69,7 +69,7 @@ global $usuarioActual;
                                         <th data-width="180" data-field="nombre" data-sortable="true">Nombre</th>
                                         <th data-width="150" data-field="email" data-sortable="true">Email</th>
                                         <th data-width="150" data-field="rol">Rol</th>
-                                        <th data-width="150" data-field="juego">Juego</th>
+                                        <th data-width="150" data-field="juego">Juego </th>
                                         <th data-width="150" data-field="especialidad">Especialidad</th>
                                         <th data-width="50" data-field="acciones">Acciones</th>
                                     </tr>
