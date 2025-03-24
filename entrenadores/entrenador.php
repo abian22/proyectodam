@@ -43,8 +43,8 @@ $entrenador = new Usuario($id);
     <div class="row mt-3">
         <div class="col-12">
             <h3>Datos Personales</h3>
-            <table id="tablaDatosPersonales" class="table">
-                <thead>
+            <table id="tablaDatosPersonales" class="table  table-hover table-bordered">
+                <thead  class="table-dark">
                     <tr>
                         <th>Apellidos</th>
                         <th>Nombre</th>
@@ -71,8 +71,8 @@ $entrenador = new Usuario($id);
     <div class="row mt-3">
         <div class="col-12">
             <h3>Datos de Acceso</h3>
-            <table id="tablaDatosAcceso" class="table">
-                <thead>
+            <table id="tablaDatosAcceso" class="table  table-hover table-bordered">
+                <thead  class="table-dark">
                 <tr>
                     <th>Último Acceso</th>
                     <th>Intentos Fallidos</th>

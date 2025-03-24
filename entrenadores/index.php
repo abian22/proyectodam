@@ -50,8 +50,8 @@ global $usuarioActual;
                     <!-- Tabla listado entrenadores -->
                     <div class="row">
                         <div class="col-12">
-                            <table class="table-striped tablaListado" id="tablaListadoEntrenadores" data-toggle="table"
-                                data-url="<?php echo CONFIG_GENERAL['RUTA_URL_BASE'] . "/entrenadores/GetJSONTablaEntrenadores.php"; ?>"
+                        <table class="table table-striped table-hover table-bordered tablaListado" id="tablaListadoJugadores" data-toggle="table"
+                        data-url="<?php echo CONFIG_GENERAL['RUTA_URL_BASE'] . "/entrenadores/GetJSONTablaEntrenadores.php"; ?>"
                                 data-unique-id="id"
                                 data-search="true"
                                 data-show-refresh="true"
@@ -63,7 +63,7 @@ global $usuarioActual;
                                 data-striped="true"
                                 data-classes="table table-hover table-condensed"
                                 data-page-list="[5, 10, 15, 20, 50, 100, 200]">
-                                <thead>
+                                <thead class="table-dark text-center">
                                     <tr>
                                         <th data-width="180" data-field="apellidos" data-sortable="true">Apellidos</th>
                                         <th data-width="180" data-field="nombre" data-sortable="true">Nombre</th>

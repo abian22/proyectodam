@@ -1,10 +1,12 @@
 <?php
 
 require_once __DIR__ . '/../config/config.globales.php';
-require_once __DIR__.'/comprobar.sesion.php';
+require_once __DIR__ . '/comprobar.sesion.php';
 require_once __DIR__ . '/../db/class.HandlerDB.php';
 require_once __DIR__ . '/../class/function.globales.php';
 require_once __DIR__ . '/../class/class.Sesion.php';
+require_once __DIR__ . '/../class/class.Usuario.php';
+require_once __DIR__ . '/../class/class.MensajeEmail.php';
 
 /* @var Usuario $usuarioActual */
 global $usuarioActual;
@@ -25,7 +27,7 @@ if (is_null($tarea)) {
 
 
 $respuesta = array();
-switch($tarea) {
+switch ($tarea) {
     case 'CARGAR_SESION':
         $id = intval($_POST['id']);
         $sesion = new Sesion($id);
@@ -73,6 +75,18 @@ switch($tarea) {
 
         if ($sesion->guardar()) {
             $respuesta['exito'] = 1;
+
+            //Enviar email al jugador
+            $mensaje = new MensajeEmail();
+            $jugador = new Usuario($sesion->getIdJugador());
+            $mensaje->setAsunto("Nueva sesion");
+            $mensaje->setCuerpoMensaje("Le confirmarmos su sesion para el dia " . $sesion->getFechaHora(true));
+            $mensaje->setDestinatarios([["nombre" => $jugador->getNombreCompleto(), "email" => $jugador->getEmail()]]);
+            $mensaje->setFechaHoraCreacion(date("Y-m-d H:i:s"));
+            var_dump($jugador);
+            if ($mensaje->guardar()) {
+                $mensaje->enviar();
+            }
         } else {
             $respuesta['exito'] = 0;
             $respuesta['mensaje'] = 'Ha ocurrido un error al intentar guardar la cita';

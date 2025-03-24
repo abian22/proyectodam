@@ -23,12 +23,14 @@ const TABLA_USUARIOS = 'usuarios';
 const TABLA_JUEGOS = 'juegos';
 const TABLA_ESPECIALIDAD = 'especialidad';
 const TABLA_SESIONES = 'sesiones';
+const TABLA_MENSAJES_EMAIL = 'mensajesemail';
 
 const TABLAS_OBJETO_DB = [
     'Usuario' => TABLA_USUARIOS,
     'Juego' => TABLA_JUEGOS,
     'Especialidad'=> TABLA_ESPECIALIDAD,
-    'Sesion'=> TABLA_SESIONES
+    'Sesion'=> TABLA_SESIONES,
+    "MensajeEmail" => TABLA_MENSAJES_EMAIL
 ];
 
 # Definición de la clase GestorDBPDO
@@ -153,7 +155,7 @@ class HandlerDB {
      * Devuelve el id del último registro insertado en el caso de que la consulta se haya podido ejecutar
      * Devuelve false si no se pudo ejecutar la consulta y guarda el error en el log
      ***********************************************************************************************/
-    public function insertarRegistro($tabla,$datos,$valoresAutonumerico = null): bool {
+    public function insertarRegistro($tabla,$datos,$valoresAutonumerico = null): int | null {
         $arrayConsultaParametros = array();
         $arrayConsultaParametrosPDO = array();
         $arrayConsultaValores = array();

@@ -23,6 +23,7 @@ foreach ($sesiones as $sesion) {
     $filasSesionesHtml .= '    <td>' . "\n";
     $filasSesionesHtml .= '       <button onclick="abrirModalSesionJugador(this, ' . $sesion['id'] . ')" class="btn btn-sm btn-warning">Editar</button>' . "\n";
     $filasSesionesHtml .= '        <button onclick="eliminarSesionJugador(this, ' . $sesion['id'] . ')" class="btn btn-sm btn-danger">Eliminar</button>' . "\n";
+    $filasSesionesHtml .= '        <a target="_blank" href="../informes/informe.sesion.php?id='.$sesion['id'].'" class="btn btn-sm btn-info">Informe</a>'."\n";
     $filasSesionesHtml .= '    </td>' . "\n";
     $filasSesionesHtml .= '</tr>' . "\n";
 }
@@ -68,8 +69,8 @@ foreach ($sesiones as $sesion) {
             <div class="row mt-3">
                 <div class="col-12">
                     <h3>Datos Personales</h3>
-                    <table id="tablaDatosPersonales" class="table">
-                        <thead>
+                    <table id="tablaDatosPersonales" class="table  table-hover table-bordered" >
+                        <thead  class="table-dark">
                             <tr>
                                 <th>Apellidos</th>
                                 <th>Nombre</th>
@@ -96,8 +97,8 @@ foreach ($sesiones as $sesion) {
             <div class="row mt-3">
                 <div class="col-12">
                     <h3>Datos de Acceso</h3>
-                    <table id="tablaDatosAcceso" class="table">
-                        <thead>
+                    <table id="tablaDatosAcceso" class="table table-bordered">
+                        <thead  class="table-dark">
                             <tr>
                                 <th>Último Acceso</th>
                                 <th>Intentos Fallidos</th>
@@ -119,8 +120,8 @@ foreach ($sesiones as $sesion) {
                 <div class="col-12">
                     <h3>Citas</h3>
                     <button class="btn btn-sm btn-success" onclick="abrirModalSesionJugador(this,0)">Agregar Cita</button>
-                    <table id="tablaListadoSesionesJugador" class="table">
-                        <thead>
+                    <table id="tablaListadoSesionesJugador" class="table table-bordered">
+                        <thead  class="table-dark">
                             <tr>
                                 <th>Fecha/Hora</th>
                                 <th>Entrenador/a</th>
