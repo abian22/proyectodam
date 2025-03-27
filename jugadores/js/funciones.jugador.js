@@ -24,10 +24,15 @@ function abrirModalJugador(boton, id) {
                     alert(respuesta.mensaje);
                 }
 
+                
+
                 if (respuesta.exito === 1) {
                     $("#form-crear-editar-jugador-nombre").val(respuesta.datos.nombre);
                     $("#form-crear-editar-jugador-apellidos").val(respuesta.datos.apellidos);
                     $("#form-crear-editar-jugador-email").val(respuesta.datos.email);
+                    $("#form-crear-editar-jugador-juego").val(respuesta.datos.juego);
+                    $("#form-crear-editar-jugador-especialidad").val(respuesta.datos.especialidad);
+                    $("#form-crear-editar-jugador-imagenPerfil").val(respuesta.datos.imagenPerfil);
 
                     $("#form-crear-editar-jugador-bloqueado").prop('checked', respuesta.datos.bloqueado);
 
@@ -83,6 +88,14 @@ function guardarJugador(boton) {
                 if (respuesta.errorNombreApellidos == 1) {
                     $("#form-crear-editar-jugador-nombre").addClass('is-invalid');
                     $("#form-crear-editar-jugador-apellidos").addClass('is-invalid');
+                }
+                if (respuesta.errorJuego == 1) {
+                    $("#form-crear-editar-jugador-juego").addClass('is-invalid');
+               
+                }
+                if (respuesta.errorEspecialidad == 1) {
+                    $("#form-crear-editar-jugador-especialidad").addClass('is-invalid');
+                   
                 }
             }
 

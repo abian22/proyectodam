@@ -2,9 +2,9 @@
 <div class="modal fade" id="modal-crear-editar-jugador" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header bg-warning">
+            <div class="modal-header text-light" style="background: linear-gradient(135deg, #6f42c1, #007bff);">
                 <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-controller"></i> Añadir/Editar Jugador</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button"  class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -12,12 +12,20 @@
                         <form id="form-crear-editar-jugador">
                             <input type="hidden" id="form-crear-editar-jugador-id" name="id" value="0">
                             <div class="row">
+                                <div class="mb-3 text-center">
+                                    
+                                    <label for="formFile" class="form-label">Elige una imagen de perfil (opcional)</label>
+                                    <input type="file" class="form-control" id="form-crear-editar-jugador-imagenPerfil" name="imagenPerfil">
+                                </div>
+
                                 <div class="col-12 col-lg-4">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="form-crear-editar-jugador-nombre" name="nombre" placeholder="Nombre">
                                         <label for="form-crear-editar-jugador-nombre">Nombre</label>
                                     </div>
                                 </div>
+
+
                                 <div class="col-12 col-lg-4">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="form-crear-editar-jugador-apellidos" name="apellidos" placeholder="Apellidos">
@@ -31,8 +39,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="row">
                                 <div class="col-12 col-lg-6">
                                     <div class="form-floating mb-3">
@@ -56,7 +62,7 @@
 
                                 <div class="col-12 col-lg-6">
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" id="form-crear-editar-jugador-especialidad" name="especialidad" placeholder="Especialidadas">
+                                        <select class="form-select" id="form-crear-editar-jugador-especialidad" name="especialidad" placeholder="Especialidades">
                                             <option value="" disabled selected>Seleccione un juego para elegir especialidad</option>
                                             <?php
                                             $gestorDB = new HandlerDB();
@@ -64,10 +70,10 @@
                                             FROM " . TABLA_ESPECIALIDAD . " e
                                             JOIN " . TABLA_JUEGOS . " j ON e.juego_id = j.id  
                                             WHERE e.rol_especialidad = 'JUGADOR'";
-                                        $stmtEspecialidades = $gestorDB->dbh->prepare($sqlEspecialidades);
-                                        $stmtEspecialidades->execute();
-                                        $especialidades = $stmtEspecialidades->fetchAll(PDO::FETCH_ASSOC);
-                                        
+                                            $stmtEspecialidades = $gestorDB->dbh->prepare($sqlEspecialidades);
+                                            $stmtEspecialidades->execute();
+                                            $especialidades = $stmtEspecialidades->fetchAll(PDO::FETCH_ASSOC);
+
                                             foreach ($especialidades as $especialidad) {
                                                 echo "<option value='{$especialidad['id']}' data-juego='{$especialidad['juego_id']}' style='display: none;'>";
                                                 echo "{$especialidad['especialidad']}</option>";

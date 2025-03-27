@@ -5,6 +5,9 @@ require_once __DIR__.'/comprobar.sesion.php';
 require_once __DIR__ . '/../db/class.HandlerDB.php';
 require_once __DIR__ . '/../class/function.globales.php';
 require_once __DIR__ . '/../class/class.Usuario.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 /* @var Usuario $usuarioActual */
 global $usuarioActual;
@@ -38,6 +41,8 @@ switch($tarea) {
         $datos['nombre'] = $usuario->getNombre();
         $datos['apellidos'] = $usuario->getApellidos();
         $datos['email'] = $usuario->getEmail();
+        $datos["juego"] = $usuario->getJuego();
+        $datos["especialidad"] = $usuario->getEspecialidad();
         $datos['bloqueado'] = $usuario->getBloqueado();
 
         $respuesta['exito'] = 1;
@@ -60,9 +65,38 @@ switch($tarea) {
 
         $usuario->setNombre(sanitizarString($_POST["nombre"]));
         $usuario->setApellidos(sanitizarString($_POST["apellidos"]));
-        $usuario->setJuego(sanitizarString($_POST["juego"]));
-        $usuario->setEspecialidad(sanitizarString($_POST["especialidad"]));
+        $usuario->setNombre($nombre);
+        $usuario->setApellidos($apellidos);
+    
+        if (!empty($_POST["juego"])) {
+            $usuario->setJuego(sanitizarString($_POST["juego"]));
+        }
+    
+        if (!empty($_POST["especialidad"])) {
+            $usuario->setEspecialidad(sanitizarString($_POST["especialidad"]));
+        }
 
+        if (isset($_FILES["imagenPerfil"]) && $_FILES["imagenPerfil"]["error"] == UPLOAD_ERR_OK) {
+            $imagen = $_FILES["imagenPerfil"]["tmp_name"]; // Ruta temporal del archivo subido
+            $imagenABinario = file_get_contents($imagen);  // Convertir la imagen en binario
+            
+            // Obtener el formato de la imagen
+            $formatoImagen = strtolower(pathinfo($_FILES["imagenPerfil"]["name"], PATHINFO_EXTENSION));
+            $tiposDeFormatoPosible = ["jpg", "jpeg", "png", "webp", "jfif"];
+            
+            // Validar la imagen
+            if (getimagesize($_FILES["imagenPerfil"]["tmp_name"]) !== false && in_array($formatoImagen, $tiposDeFormatoPosible)) {
+                $usuario->setImagenPerfil($imagenABinario); // Guardar la imagen
+            } else {
+                $respuesta['exito'] = 0;
+                $respuesta['mensaje'] = 'El archivo no es una imagen válida.';
+                break;
+            }
+        } else {
+            // Mantener imagen actual o establecer una cadena vacía si no hay imagen previa
+            $usuario->setImagenPerfil($usuario->getImagenPerfil() ?: ""); 
+        }
+        
         if (!validarEmail(sanitizarString($_POST["email"]))) {
             $respuesta['exito'] = 0;
             $respuesta['errorEmail'] = 1;
@@ -93,6 +127,19 @@ switch($tarea) {
                 }
             }
         } else {
+            if (empty($_POST["juego"])) {
+                $respuesta['exito'] = 0;
+                $respuesta['errorJuego'] = 1;
+                $respuesta['mensaje'] = 'Debe rellenar el campo juego';
+                break;
+            }
+
+            if (empty($_POST["especialidad"])) {
+                $respuesta['exito'] = 0;
+                $respuesta['errorEspecialidad'] = 1;
+                $respuesta['mensaje'] = 'Debe rellenar el campo especialidad';
+                break;
+            }
             if (validarCambioPassword($password1, $password2)) {
                 $usuario->setPassword($password1);
             } else {
@@ -111,6 +158,7 @@ switch($tarea) {
             $respuesta['exito'] = 1;
         } else {
             $respuesta['exito'] = 0;
+            
             $respuesta['mensaje'] = 'Ha ocurrido un error al intentar guardar el usuario';
         }
         break;
@@ -121,6 +169,6 @@ switch($tarea) {
         break;
 }
 
-//ob_clean();
+ob_clean();
 header('Content-Type: application/json');
 echo json_encode($respuesta);

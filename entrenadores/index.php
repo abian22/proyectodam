@@ -24,6 +24,18 @@ global $usuarioActual;
     <script src="./js/funciones.entrenador.js"></script>
 </head>
 
+<style>
+
+    body {
+        background-color: rgba(0, 0, 0, 0.77);
+    }
+
+    #añadirEntrenador:hover {
+        background: linear-gradient(135deg, #6f42c1, #007bff);
+    }
+
+</style>
+
 <body>
     <?php include_once(__DIR__ . '/modal/crear.editar.entrenador.php'); ?>
 
@@ -35,7 +47,7 @@ global $usuarioActual;
 
         <div class="container mt-2">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 text-light">
                     <h1>Entrenadores</h1>
                 </div>
             </div>
@@ -44,13 +56,13 @@ global $usuarioActual;
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <button class="btn btn-success" onclick="abrirModalEntrenador(this, 0)">Añadir Entrenador</button>
+                            <button class="btn btn-primary" id="añadirEntrenador" onclick="abrirModalEntrenador(this, 0)">Añadir Entrenador</button>
                         </div>
                     </div>
                     <!-- Tabla listado entrenadores -->
                     <div class="row">
-                        <div class="col-12">
-                        <table class="table table-striped table-hover table-bordered tablaListado" id="tablaListadoJugadores" data-toggle="table"
+                        <div class="col-12 text-light">
+                        <table class="table table-striped table-hover table-bordered tablaListado table-dark" id="tablaListadoJugadores" data-toggle="table"
                         data-url="<?php echo CONFIG_GENERAL['RUTA_URL_BASE'] . "/entrenadores/GetJSONTablaEntrenadores.php"; ?>"
                                 data-unique-id="id"
                                 data-search="true"
@@ -65,6 +77,7 @@ global $usuarioActual;
                                 data-page-list="[5, 10, 15, 20, 50, 100, 200]">
                                 <thead class="table-dark text-center">
                                     <tr>
+                                        <th data-width="180" data-field="imagenPerfil" data-sortable="true">Imagen de perfil</th> 
                                         <th data-width="180" data-field="apellidos" data-sortable="true">Apellidos</th>
                                         <th data-width="180" data-field="nombre" data-sortable="true">Nombre</th>
                                         <th data-width="150" data-field="email" data-sortable="true">Email</th>

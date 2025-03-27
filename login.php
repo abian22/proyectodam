@@ -18,6 +18,12 @@ require_once(__DIR__.'/config/config.globales.php');
     <!-- Login JS -->
     <script src="./js/funciones.login.js"></script>
 </head>
+<style>
+
+    #botonAcceder:hover {
+        background: linear-gradient(135deg, #6f42c1, #007bff);
+    }
+</style>
 <body>
 
 <div class="container-fluid">
@@ -41,7 +47,7 @@ require_once(__DIR__.'/config/config.globales.php');
                     <div class="mb-3">
                         <span class="badge" id="form-login-feedback"></span>
                     </div>
-                    <button class="btn btn-warning w-100">Acceder</button>
+                    <button class="btn btn-primary w-100" id="botonAcceder">Acceder</button>
                     </form>
             </div>
         </div>

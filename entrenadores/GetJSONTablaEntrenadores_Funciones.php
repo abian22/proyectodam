@@ -70,7 +70,8 @@ function generarConsultaListadoTablaEntrenadores(string $textoBusqueda = "", int
             ud.nombre,
             ud.apellidos,
             ud.email,
-            ud.rol,           
+            ud.rol,
+            ud.imagenPerfil,        
             j.id AS juego_id,
             j.nombre AS juego,
             e.especialidad
@@ -118,6 +119,15 @@ function listadoTablaEntrenadores(string $textoBusqueda = "", int $limit = 0, in
             $jsonDatos[$i]['apellidos'] = $fila['apellidos'];
             $jsonDatos[$i]['email'] = $fila['email'];
             $jsonDatos[$i]['rol'] = $fila['rol'];
+            if (empty($fila['imagenPerfil'])) {
+                $jsonDatos[$i]['imagenPerfil'] = '<div style="display: flex; justify-content: center; align-items: center;">
+                    <img src="../img/defaultPerfil/defaultPerfil.webp" alt="Foto de Perfil" style="width: 30px; height: 30px; border-radius: 50%;">
+                </div>';
+            } else {
+                $jsonDatos[$i]['imagenPerfil'] = '<div style="display: flex; justify-content: center; align-items: center;">
+                    <img src="data:image/jpeg;base64,' . base64_encode($fila['imagenPerfil']) . '" alt="Foto de Perfil" style="width: 30px; height: 30px; border-radius: 50%;">
+                </div>';
+            }
             $jsonDatos[$i]['j.id'] = $fila['juego_id'];
             if ($jsonDatos[$i]['j.id'] == 1) {
                 $jsonDatos[$i]['juego'] = $fila['juego'] . ' <img src="../img/juegos/lol.png" alt="Imagen" style="width: 20px; height: auto;">';

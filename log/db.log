@@ -714,3 +714,105 @@ INSERT INTO mensajesemail (idUsuario,asunto,destinatarios,destinatariosCC,destin
 2025-03-17 10:59:52: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ipUltimoAcceso' in 'field list'
 INSERT INTO mensajesemail (idUsuario,asunto,destinatarios,destinatariosCC,destinatariosCCO,cuerpoMensaje,fechaHoraCreacion,ipUltimoAcceso,fechaHoraUltimoEnvio,enviado,error,mensajeError) VALUES (:idUsuario,:asunto,:destinatarios,:destinatariosCC,:destinatariosCCO,:cuerpoMensaje,:fechaHoraCreacion,:ipUltimoAcceso,:fechaHoraUltimoEnvio,:enviado,:error,:mensajeError)
 
+2025-03-24 18:33:33: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'perfil@gmail.com' for key 'email'
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:42:43: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:43:17: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:43:22: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:43:23: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:43:24: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:43:24: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:43:24: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:43:25: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:43:25: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:43:58: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:47:29: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:47:56: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:50:22: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:50:40: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:51:01: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:51:41: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:51:42: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:51:42: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-24 18:51:44: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'imagenPerfil' cannot be null
+INSERT INTO usuarios (nombre,apellidos,email,password,rol,juego_id,imagenPerfil,especialidad_id,ipUltimoAcceso,fechaHoraUltimoAcceso,intentosFallidos,bloqueado) VALUES (:nombre,:apellidos,:email,:password,:rol,:juego_id,:imagenPerfil,:especialidad_id,:ipUltimoAcceso,:fechaHoraUltimoAcceso,:intentosFallidos,:bloqueado)
+
+2025-03-26 16:58:00: SQLSTATE[08S01]: Communication link failure: 1153 Got a packet bigger than 'max_allowed_packet' bytes
+UPDATE usuarios SET id=:id,nombre=:nombre,apellidos=:apellidos,email=:email,password=:password,rol=:rol,juego_id=:juego_id,imagenPerfil=:imagenPerfil,especialidad_id=:especialidad_id,ipUltimoAcceso=:ipUltimoAcceso,fechaHoraUltimoAcceso=:fechaHoraUltimoAcceso,intentosFallidos=:intentosFallidos,bloqueado=:bloqueado WHERE id=28
+
+2025-03-26 17:01:37: SQLSTATE[08S01]: Communication link failure: 1153 Got a packet bigger than 'max_allowed_packet' bytes
+UPDATE usuarios SET id=:id,nombre=:nombre,apellidos=:apellidos,email=:email,password=:password,rol=:rol,juego_id=:juego_id,imagenPerfil=:imagenPerfil,especialidad_id=:especialidad_id,ipUltimoAcceso=:ipUltimoAcceso,fechaHoraUltimoAcceso=:fechaHoraUltimoAcceso,intentosFallidos=:intentosFallidos,bloqueado=:bloqueado WHERE id=28
+
+2025-03-26 17:02:11: SQLSTATE[08S01]: Communication link failure: 1153 Got a packet bigger than 'max_allowed_packet' bytes
+UPDATE usuarios SET id=:id,nombre=:nombre,apellidos=:apellidos,email=:email,password=:password,rol=:rol,juego_id=:juego_id,imagenPerfil=:imagenPerfil,especialidad_id=:especialidad_id,ipUltimoAcceso=:ipUltimoAcceso,fechaHoraUltimoAcceso=:fechaHoraUltimoAcceso,intentosFallidos=:intentosFallidos,bloqueado=:bloqueado WHERE id=6
+
+2025-03-26 17:03:32: SQLSTATE[08S01]: Communication link failure: 1153 Got a packet bigger than 'max_allowed_packet' bytes
+UPDATE usuarios SET id=:id,nombre=:nombre,apellidos=:apellidos,email=:email,password=:password,rol=:rol,juego_id=:juego_id,imagenPerfil=:imagenPerfil,especialidad_id=:especialidad_id,ipUltimoAcceso=:ipUltimoAcceso,fechaHoraUltimoAcceso=:fechaHoraUltimoAcceso,intentosFallidos=:intentosFallidos,bloqueado=:bloqueado WHERE id=6
+
+2025-03-26 17:03:56: SQLSTATE[08S01]: Communication link failure: 1153 Got a packet bigger than 'max_allowed_packet' bytes
+UPDATE usuarios SET id=:id,nombre=:nombre,apellidos=:apellidos,email=:email,password=:password,rol=:rol,juego_id=:juego_id,imagenPerfil=:imagenPerfil,especialidad_id=:especialidad_id,ipUltimoAcceso=:ipUltimoAcceso,fechaHoraUltimoAcceso=:fechaHoraUltimoAcceso,intentosFallidos=:intentosFallidos,bloqueado=:bloqueado WHERE id=9
+
+2025-03-26 17:04:19: SQLSTATE[08S01]: Communication link failure: 1153 Got a packet bigger than 'max_allowed_packet' bytes
+UPDATE usuarios SET id=:id,nombre=:nombre,apellidos=:apellidos,email=:email,password=:password,rol=:rol,juego_id=:juego_id,imagenPerfil=:imagenPerfil,especialidad_id=:especialidad_id,ipUltimoAcceso=:ipUltimoAcceso,fechaHoraUltimoAcceso=:fechaHoraUltimoAcceso,intentosFallidos=:intentosFallidos,bloqueado=:bloqueado WHERE id=9
+
+2025-03-26 17:07:24: SQLSTATE[08S01]: Communication link failure: 1153 Got a packet bigger than 'max_allowed_packet' bytes
+UPDATE usuarios SET id=:id,nombre=:nombre,apellidos=:apellidos,email=:email,password=:password,rol=:rol,juego_id=:juego_id,imagenPerfil=:imagenPerfil,especialidad_id=:especialidad_id,ipUltimoAcceso=:ipUltimoAcceso,fechaHoraUltimoAcceso=:fechaHoraUltimoAcceso,intentosFallidos=:intentosFallidos,bloqueado=:bloqueado WHERE id=28
+
+2025-03-26 17:07:52: SQLSTATE[08S01]: Communication link failure: 1153 Got a packet bigger than 'max_allowed_packet' bytes
+UPDATE usuarios SET id=:id,nombre=:nombre,apellidos=:apellidos,email=:email,password=:password,rol=:rol,juego_id=:juego_id,imagenPerfil=:imagenPerfil,especialidad_id=:especialidad_id,ipUltimoAcceso=:ipUltimoAcceso,fechaHoraUltimoAcceso=:fechaHoraUltimoAcceso,intentosFallidos=:intentosFallidos,bloqueado=:bloqueado WHERE id=9
+
+2025-03-27 09:33:55: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM usuarios WHERE rol = 'JUGADOR'' at line 1
+SELECT  FROM usuarios WHERE rol = :rol 
+
+2025-03-27 09:38:48: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM usuarios WHERE rol = 'JUGADOR'' at line 1
+SELECT  FROM usuarios WHERE rol = :rol 
+
+2025-03-27 09:39:15: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM usuarios WHERE rol = 'JUGADOR'' at line 1
+SELECT  FROM usuarios WHERE rol = :rol 
+
+2025-03-27 09:39:50: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM usuarios WHERE rol = 'JUGADOR'' at line 1
+SELECT  FROM usuarios WHERE rol = :rol 
+
+2025-03-27 09:41:35: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM usuarios WHERE rol = 'JUGADOR'' at line 1
+SELECT  FROM usuarios WHERE rol = :rol 
+
+2025-03-27 09:45:23: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM usuarios WHERE rol = 'JUGADOR'' at line 1
+SELECT  FROM usuarios WHERE rol = :rol 
+

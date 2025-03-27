@@ -13,6 +13,7 @@ class Usuario extends ObjetoDB
     protected string $password = "";
     protected string $rol = "";
     protected string $juego_id = "";
+    protected string | null $imagenPerfil = null;
     protected string $especialidad_id = "";
     protected string $ipUltimoAcceso = "";
     protected string | null $fechaHoraUltimoAcceso = "";
@@ -90,6 +91,16 @@ class Usuario extends ObjetoDB
             return true;
         }
         return false;
+    }
+
+    public function getImagenPerfil(): string | null
+    {
+        return $this->imagenPerfil;
+    }
+
+    public function setImagenPerfil(string $imagenPerfil): void
+    {
+        $this->imagenPerfil = $imagenPerfil;
     }
 
     public function getJuego(): string
@@ -208,5 +219,22 @@ function listadoUsuarios(array $datos, string $rol = ""): array {
     }
 
     return [];
+}
+
+function contarUsuariosPorRol(array $datos, string $rol): int {
+    $gestorDB = new HandlerDB();
+    $registros = $gestorDB->obtenerRegistros(
+        TABLA_USUARIOS,
+        $datos,
+        'rol = :rol',
+        [':rol' => $rol],
+        null,
+        'FETCH_ASSOC'
+    );
+
+
+
+    // Devolvemos el número de usuarios encontrados
+    return count($registros);
 }
 ?>

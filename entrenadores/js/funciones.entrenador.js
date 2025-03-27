@@ -84,6 +84,14 @@ function guardarEntrenador(boton) {
                     $("#form-crear-editar-entrenador-nombre").addClass('is-invalid');
                     $("#form-crear-editar-entrenador-apellidos").addClass('is-invalid');
                 }
+                if (respuesta.errorJuego == 1) {
+                    $("#form-crear-editar-entrenador-juego").addClass('is-invalid');
+               
+                }
+                if (respuesta.errorEspecialidad == 1) {
+                    $("#form-crear-editar-entrenador-especialidad").addClass('is-invalid');
+                   
+                }
             }
 
             if (respuesta.exito === 1) {

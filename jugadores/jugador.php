@@ -48,6 +48,19 @@ foreach ($sesiones as $sesion) {
     <script src="./js/funciones.jugador.js"></script>
 </head>
 
+<style> 
+       body {
+            background-color:rgba(0, 0, 0, 0.77);
+        }
+
+        #agregarCita:hover {
+               background: linear-gradient(135deg, #6f42c1, #007bff);
+        }
+
+        
+    
+</style>
+
 <body>
     <input type="hidden" id="idJugador" value="<?php echo $usuario->getId() ?>">
 
@@ -60,16 +73,16 @@ foreach ($sesiones as $sesion) {
     <?php } else { ?>
 
         <div class="container mt-2">
-            <div class="row">
+            <div class="row  text-light">
                 <div class="col-12">
-                    <h1>Jugador | <?php echo $usuario->getNombreCompleto() ?></h1>
+                    <h1>Jugador | <?php echo $usuario->getNombreCompleto() ?> <img style="height:80px; width:80px; border-radius:40px" src="data:image/jpeg;base64,<?php echo base64_encode($usuario->getImagenPerfil()); ?>" alt="Imagen de perfil"></h1>
                 </div>
             </div>
 
-            <div class="row mt-3">
+            <div class="row mt-3  text-light">
                 <div class="col-12">
                     <h3>Datos Personales</h3>
-                    <table id="tablaDatosPersonales" class="table  table-hover table-bordered" >
+                    <table id="tablaDatosPersonales" class="table  table-hover table-bordered table-striped table-dark" >
                         <thead  class="table-dark">
                             <tr>
                                 <th>Apellidos</th>
@@ -94,10 +107,10 @@ foreach ($sesiones as $sesion) {
                 </div>
             </div>
 
-            <div class="row mt-3">
+            <div class="row mt-3  text-light">
                 <div class="col-12">
                     <h3>Datos de Acceso</h3>
-                    <table id="tablaDatosAcceso" class="table table-bordered">
+                    <table id="tablaDatosAcceso" class="table  table-hover table-bordered table-striped table-dark">
                         <thead  class="table-dark">
                             <tr>
                                 <th>Último Acceso</th>
@@ -116,11 +129,11 @@ foreach ($sesiones as $sesion) {
                 </div>
             </div>
 
-            <div class="row mt-3">
+            <div class="row mt-3  text-light">
                 <div class="col-12">
                     <h3>Citas</h3>
-                    <button class="btn btn-sm btn-success" onclick="abrirModalSesionJugador(this,0)">Agregar Cita</button>
-                    <table id="tablaListadoSesionesJugador" class="table table-bordered">
+                    <button class="btn btn-sm btn-primary mb-2" onclick="abrirModalSesionJugador(this,0)" id="agregarCita" >Agregar Cita</button>
+                    <table id="tablaListadoSesionesJugador" class="table  table-hover table-bordered table-striped table-dark">
                         <thead  class="table-dark">
                             <tr>
                                 <th>Fecha/Hora</th>

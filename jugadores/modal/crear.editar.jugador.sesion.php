@@ -4,8 +4,8 @@ require_once __DIR__ . '/../../class/class.Usuario.php';
 $entrenadores = listadoUsuarios(['id', 'apellidos', 'nombre'], 'ENTRENADOR');
 
 $opcionesSelectEntrenadores = '';
-foreach($entrenadores as $entrenador) {
-    $opcionesSelectEntrenadores .= '<option value="'.$entrenador['id'].'">'.$entrenador['apellidos'].', '.$entrenador['nombre'].'</option>';
+foreach ($entrenadores as $entrenador) {
+    $opcionesSelectEntrenadores .= '<option value="' . $entrenador['id'] . '">' . $entrenador['apellidos'] . ', ' . $entrenador['nombre'] . '</option>';
 }
 ?>
 
@@ -13,9 +13,9 @@ foreach($entrenadores as $entrenador) {
 <div class="modal fade" id="modal-crear-editar-sesion-jugador" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header bg-warning">
+            <div class="modal-header text-light" style="background: linear-gradient(135deg, #6f42c1, #007bff);">
                 <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-bandaid"></i> Añadir/Editar sesión jugador</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button"  class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -49,9 +49,7 @@ foreach($entrenadores as $entrenador) {
                                     </div>
                                 </div>
                             </div>
-
                             <hr>
-
                             <div class="row mt-2">
                                 <div class="col-12">
                                     <div class="form-floating">

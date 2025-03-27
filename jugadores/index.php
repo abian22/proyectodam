@@ -5,6 +5,7 @@ require_once __DIR__ . '/../api/comprobar.sesion.php';
 global $usuarioActual;
 ?>
 
+
 <!doctype html>
 <html lang="es">
 
@@ -24,6 +25,19 @@ global $usuarioActual;
     <script src="./js/funciones.jugador.js"></script>
 </head>
 
+<style> 
+       body {
+            background-color:rgba(0, 0, 0, 0.77);
+        }
+
+        #añadirJugador:hover {
+               background: linear-gradient(135deg, #6f42c1, #007bff);
+        }
+
+        
+    
+</style>
+
 <body>
     <?php include_once(__DIR__ . '/modal/crear.editar.jugador.php'); ?>
 
@@ -36,7 +50,7 @@ global $usuarioActual;
         <div class="container mt-2">
             <div class="row">
                 <div class="col-12">
-                    <h1>Jugadores</h1>
+                    <h1 class="text-light">Jugadores</h1>
                 </div>
             </div>
 
@@ -44,13 +58,13 @@ global $usuarioActual;
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <button class="btn btn-success" onclick="abrirModalJugador(this, 0)">Añadir Jugador</button>
+                            <button class="btn btn-primary" id="añadirJugador" onclick="abrirModalJugador(this, 0)">Añadir Jugador</button>
                         </div>
                     </div>
                     <!-- Tabla listado jugadores -->
                     <div class="row">
-                        <div class="col-12">
-                            <table class="table table-striped table-hover table-bordered tablaListado" id="tablaListadoJugadores" data-toggle="table"
+                        <div class="col-12 text-light">
+                            <table class="table table-striped table-hover table-bordered tablaListado table-dark" id="tablaListadoJugadores" data-toggle="table"
                                 data-url="<?php echo CONFIG_GENERAL['RUTA_URL_BASE'] . "/jugadores/GetJSONTablaJugadores.php"; ?>"
                                 data-unique-id="id"
                                 data-search="true"
@@ -65,8 +79,9 @@ global $usuarioActual;
                                 data-page-list="[5, 10, 15, 20, 50, 100, 200]">
                                 <thead class="table-dark">
                                     <tr>
+                                        <th data-width="180" data-field="imagenPerfil" data-sortable="true">Imagen de perfil</th> 
                                         <th data-width="180" data-field="apellidos" data-sortable="true">Apellidos</th>
-                                        <th data-width="180" data-field="nombre" data-sortable="true">Nombre</th>
+                                        <th data-width="180" data-field="nombre" data-sortable="true">Nombre </th>
                                         <th data-width="150" data-field="email" data-sortable="true">Email</th>
                                         <th data-width="150" data-field="rol">Rol</th>
                                         <th data-width="150" data-field="juego">Juego</th>

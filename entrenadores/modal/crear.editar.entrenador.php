@@ -2,9 +2,9 @@
 <div class="modal fade" id="modal-crear-editar-entrenador" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header bg-warning">
-                <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-controller"></i> Añadir/Editar entrenador</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header" style="background: linear-gradient(135deg, #6f42c1, #007bff);">
+                <h1 class="modal-title fs-5 text-light" id="exampleModalLabel"><i class="bi bi-controller"></i> Añadir/Editar entrenador</h1>
+                <button type="button"  class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -12,6 +12,11 @@
                         <form id="form-crear-editar-entrenador">
                             <input type="hidden" id="form-crear-editar-entrenador-id" name="id" value="0">
                             <div class="row">
+                            <div class="mb-3 text-center">
+                                    
+                                    <label for="formFile" class="form-label">Elige una imagen de perfil (opcional)</label>
+                                    <input type="file" class="form-control" id="form-crear-editar-entrenador-imagenPerfil" name="imagenPerfil">
+                                </div>
                                 <div class="col-12 col-lg-4">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="form-crear-editar-entrenador-nombre" name="nombre" placeholder="Nombre">
