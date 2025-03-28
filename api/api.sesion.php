@@ -42,6 +42,9 @@ switch ($tarea) {
         $datos['idJugador'] = $sesion->getIdJugador();
         $datos['idEntrenador'] = $sesion->getIdEntrenador();
         $datos['observaciones'] = $sesion->getObservaciones();
+        $datos['objetivo'] = $sesion->getObjetivo();
+        $datos['proceso'] = $sesion->getProceso();
+
 
         $respuesta['exito'] = 1;
         $respuesta['datos'] = $datos;
@@ -52,6 +55,8 @@ switch ($tarea) {
         $sesion = new Sesion($id);
 
         $sesion->setObservaciones(sanitizarString($_POST['observaciones']));
+        $sesion->setObjetivo(sanitizarString($_POST['objetivo']));
+        $sesion->setProceso(sanitizarString($_POST['proceso']));
         $idJugador = intval($_POST['idJugador']);
         $idEntrenador = intval($_POST['idEntrenador']);
 
@@ -68,6 +73,20 @@ switch ($tarea) {
             $respuesta['exito'] = 0;
             $respuesta['errorFecha'] = 1;
             $respuesta['mensaje'] = 'La fecha no es válida';
+            break;
+        }
+
+        if (empty($_POST["objetivo"])) {
+            $respuesta['exito'] = 0;
+            $respuesta['errorObjetivo'] = 1;
+            $respuesta['mensaje'] = 'Debe rellenar el campo objetivo';
+            break;
+        }
+
+        if (empty($_POST["proceso"])) {
+            $respuesta['exito'] = 0;
+            $respuesta['errorProceso'] = 1;
+            $respuesta['mensaje'] = 'Debe rellenar el campo proceso';
             break;
         }
 

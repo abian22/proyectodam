@@ -9,6 +9,8 @@ class Sesion extends ObjetoDB {
     protected int $idJugador = 0;
     protected int $idEntrenador = 0;
     protected string $fechaHora = "";
+    protected string $objetivo = "";
+    protected string $proceso = "";
     protected string $observaciones = "";
 
 
@@ -64,6 +66,21 @@ class Sesion extends ObjetoDB {
         $this->observaciones = sanitizarString($observaciones);
     }
 
+    public function getObjetivo(): string {
+        return $this->objetivo;
+    }
+
+    public function setObjetivo(string $objetivo): void {
+        $this->objetivo = sanitizarString($objetivo);
+    }
+
+    public function getProceso(): string {
+        return $this->proceso;
+    }
+
+    public function setProceso(string $proceso): void {
+        $this->proceso = sanitizarString($proceso);
+    }
 
     public function guardar(): bool {
         if ($this->fechaHora == "") {

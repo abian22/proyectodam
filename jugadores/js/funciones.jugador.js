@@ -147,6 +147,16 @@ function abrirModalSesionJugador(boton, id) {
 
                     $("#modal-crear-editar-sesion-jugador").modal("show");
                 }
+
+                if (respuesta.errorObjetivo == 1) {
+                    $("#form-crear-editar-jugador-objetivo").addClass('is-invalid');
+               
+                }
+
+                if (respuesta.errorProceso == 1) {
+                    $("#form-crear-editar-jugador-proceso").addClass('is-invalid');
+               
+                }
             },
 
             error: function (xhr, status, error) {

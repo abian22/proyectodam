@@ -134,11 +134,14 @@ function listadoTablaJugadores(string $textoBusqueda = "", int $limit = 0, int $
             }
             $jsonDatos[$i]['j.id'] = $fila['juego_id'];
             if ($jsonDatos[$i]['j.id'] == 1) {
-                $jsonDatos[$i]['juego'] = $fila['juego'] . ' <img src="../img/juegos/lol.png" alt="Imagen" style="width: 20px; height: auto;">';
+                $jsonDatos[$i]['juego'] = '<img src="../img/juegos/lol.png" alt="Imagen" style="width: 20px; height: auto; display: block; margin: 0 auto;" title="League of Legends">
+';
             } elseif ($jsonDatos[$i]['j.id'] == 2) {
-                $jsonDatos[$i]['juego'] = $fila['juego'] . ' <img src="../img/juegos/valorant.png" alt="Imagen" style="width: 20px; height: auto;">';
+                $jsonDatos[$i]['juego'] = '<img src="../img/juegos/valorant.png" alt="Imagen" style="width: 20px; height: auto; display: block; margin: 0 auto;" title="Valorant">
+';
             } elseif ($jsonDatos[$i]['j.id'] == 3) {
-                $jsonDatos[$i]['juego'] = $fila['juego'] . ' <img src="../img/juegos/csgo.ico" alt="Imagen" style="width: 20px; height: auto;">';
+                $jsonDatos[$i]['juego'] = ' <img src="../img/juegos/csgo.ico" alt="Imagen" style="width: 20px; height: auto; display: block; margin: 0 auto;" title="CS:GO">
+';
             }
 
             $jsonDatos[$i]['especialidad'] = $fila['especialidad'];
