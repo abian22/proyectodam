@@ -94,6 +94,7 @@ switch ($tarea) {
 
         if ($sesion->guardar()) {
             $respuesta['exito'] = 1;
+            var_dump('Sesion guardada correctamente');
 
             //Enviar email al jugador
             $mensaje = new MensajeEmail();

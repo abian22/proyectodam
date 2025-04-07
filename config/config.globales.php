@@ -4,8 +4,8 @@ date_default_timezone_set('Atlantic/Canary');
 
 // CONFIGURACIÓN GENERAL
 const CONFIG_GENERAL = array(
-    'TITULO_WEB' => 'DAMDentista 1.0',
-    'DESCRIPCION_WEB' => 'Ejemplo de login para una consulta odontológica',
+    'TITULO_WEB' => 'proyectoDAM',
+    'DESCRIPCION_WEB' => 'Web de entrenadores y jugadores de eSports',
     'RUTA_URL_BASE' => 'http://localhost/proyectodam',
     'RUTA_URL_BASE_LIB' => 'http://localhost/proyectodam/lib',
     'RUTA_SERVER_BASE' => __DIR__.'/..',

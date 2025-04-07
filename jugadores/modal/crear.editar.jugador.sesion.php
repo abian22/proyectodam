@@ -83,7 +83,7 @@ foreach ($entrenadores as $entrenador) {
             </div>
             <div class="modal-footer bg-dark-subtle">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
-                <button type="button" class="btn btn-success" onclick="guardarSesionJugador(this)"><i class="bi bi-cloud-arrow-up"></i> Guardar Datos</button>
+                <button type="button" class="btn btn-success"  data-bs-dismiss="modal" onclick="guardarSesionJugador(this)"><i class="bi bi-cloud-arrow-up"></i> Guardar Datos</button>
             </div>
         </div>
     </div>

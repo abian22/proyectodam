@@ -77,7 +77,7 @@ switch($tarea) {
             $formatoImagen = strtolower(pathinfo($_FILES["imagenPerfil"]["name"], PATHINFO_EXTENSION));
             $tiposDeFormatoPosible = ["jpg", "jpeg", "png", "webp", "jfif"];
             
-            // Validar la imagen
+            // Validar la imagen antes de guardarla
             if (getimagesize($_FILES["imagenPerfil"]["tmp_name"]) !== false && in_array($formatoImagen, $tiposDeFormatoPosible)) {
                 $usuario->setImagenPerfil($imagenABinario); // Guardar la imagen
             } else {
@@ -86,7 +86,7 @@ switch($tarea) {
                 break;
             }
         } else {
-            // Mantener imagen actual o establecer una cadena vacía si no hay imagen previa
+            // Mantener imagen actual o establecer un string vacio en caso contrario
             $usuario->setImagenPerfil($usuario->getImagenPerfil() ?: ""); 
         }
         

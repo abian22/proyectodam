@@ -232,9 +232,7 @@ function contarUsuariosPorRol(array $datos, string $rol): int {
         'FETCH_ASSOC'
     );
 
-
-
-    // Devolvemos el número de usuarios encontrados
+    // lo mismo que la función anterior pero devuelve el count de usuarios
     return count($registros);
 }
 ?>

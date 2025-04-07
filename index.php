@@ -11,6 +11,7 @@ global $usuarioActual;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/titleicon.png">
     <title><?php echo CONFIG_GENERAL['TITULO_WEB']; ?> - Panel de Administración</title>
 
     <!-- Header Común a todas las páginas de la aplicación -->
@@ -89,7 +90,7 @@ global $usuarioActual;
                                     </div>
                                 </div>
 
-                                <!-- Coaches -->
+                                <!-- Entrenadores -->
                                 <div class="col-md-6 mb-3" >
                                     <div class="card shadow-sm bg-dark border-light" id=card>
                                         <div class="card-body">
