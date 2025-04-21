@@ -103,6 +103,10 @@ class Usuario extends ObjetoDB
         $this->imagenPerfil = $imagenPerfil;
     }
 
+    public function getJuegoId() :int {
+        return $this->juego_id;
+    }
+
     public function getJuego(): string
     {
 

@@ -1,11 +1,17 @@
 <?php
 require_once __DIR__ . '/../../class/class.Usuario.php';
 
-$entrenadores = listadoUsuarios(['id', 'apellidos', 'nombre'], 'ENTRENADOR');
+$entrenadores = listadoUsuarios(['id', 'apellidos', 'nombre', 'juego_id'], 'ENTRENADOR');
+
+$id = intval($_GET['id']);
+$usuario = new Usuario($id);
 
 $opcionesSelectEntrenadores = '';
 foreach ($entrenadores as $entrenador) {
-    $opcionesSelectEntrenadores .= '<option value="' . $entrenador['id'] . '">' . $entrenador['apellidos'] . ', ' . $entrenador['nombre'] . '</option>';
+    if($usuario->getJuegoId() === $entrenador["juego_id"]){
+        $opcionesSelectEntrenadores .= '<option value="' . $entrenador['id'] . '">' . $entrenador['apellidos'] . ', ' . $entrenador['nombre'] . '</option>';
+    }
+
 }
 ?>
 
